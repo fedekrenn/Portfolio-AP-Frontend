@@ -38,17 +38,7 @@ header {
     padding: 20px;
   }
   
-  i {
-    font-size: 1em;
-    transition: .4s;
-  }
-  
   i.icono-logueo {
     font-size: 2em;
     margin: 0 10px;
-  }
-  
-  main i:hover{
-    color: brown;
-    transform: scale(1.2);
   }

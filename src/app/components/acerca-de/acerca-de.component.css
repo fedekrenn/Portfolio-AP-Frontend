@@ -1,0 +1,25 @@
+.descripcion {
+    position: relative;
+}
+
+.foto-perfil {
+    width: 200px;
+    border-radius: 50%;
+    position: absolute;
+    top: -200px;
+    left: 20px;
+}
+
+.descripcion__info {
+    margin: 100px 20px 20px 20px;
+}
+
+.about-me {
+    margin: 50px 20px;
+    display: flex;
+}
+
+.location {
+    font-size: .9em;
+}
+

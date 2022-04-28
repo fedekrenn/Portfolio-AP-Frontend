@@ -8,8 +8,8 @@
 }
 
 body {
-  background: rgb(243,254,245);
-  background: linear-gradient(90deg, rgba(243,254,245,1) 0%, rgba(230,230,242,1) 26%, rgba(243,254,245,1) 100%);
+  background: rgb(243, 254, 245);
+  background: linear-gradient(90deg, rgba(243, 254, 245, 1) 0%, rgba(230, 230, 242, 1) 26%, rgba(243, 254, 245, 1) 100%);
 }
 
 h1,
@@ -32,10 +32,20 @@ a {
   transition: .5s;
 }
 
-main a:hover{
+main a:hover {
   color: brown;
 }
 
 img {
   max-width: 100%;
+}
+
+i {
+  font-size: 1em;
+  transition: .4s;
+}
+
+main i:hover {
+  color: brown;
+  transform: scale(1.2);
 }
