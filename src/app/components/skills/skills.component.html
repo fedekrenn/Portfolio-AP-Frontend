@@ -4,35 +4,67 @@
         <i class="fa-solid fa-plus"></i>
     </div>
     <div class="skills">
-        <div class="iconos-edicion">
-            <h3>Html</h3>
-            <div>
-                <i class="fa-solid fa-pen"></i>
-                <i class="fa-solid fa-trash"></i>
+        <div class="nuevo-hs">
+            <div class="iconos-edicion">
+                <h3>Html</h3>
+                <div>
+                    <i class="fa-solid fa-pen"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
             </div>
+            <circle-progress
+                [percent]="85"
+                [radius]="100"
+                [outerStrokeWidth]="16" 
+                [innerStrokeWidth]="8"
+                [outerStrokeColor]="'#04AA6D'" 
+                [innerStrokeColor]="'false'" 
+                [showSubtitle]="false"
+                [titleFontSize]="'40'" 
+                [animation]="true" 
+                [animationDuration]="300">
+            </circle-progress>
         </div>
-        <div class="container">
-            <div class="skills__child html">90%</div>
-        </div>
-        <div class="iconos-edicion">
-            <h3>Css</h3>
-            <div>
-                <i class="fa-solid fa-pen"></i>
-                <i class="fa-solid fa-trash"></i>
+        <div class="nuevo-hs">
+            <div class="iconos-edicion">
+                <h3>Css</h3>
+                <div>
+                    <i class="fa-solid fa-pen"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
             </div>
+            <circle-progress
+                [percent]="70" 
+                [radius]="100" [outerStrokeWidth]="16" 
+                [innerStrokeWidth]="8"
+                [outerStrokeColor]="'#2196F3'" 
+                [innerStrokeColor]="'false'" 
+                [showSubtitle]="false"
+                [titleFontSize]="'40'" 
+                [animation]="true" 
+                [animationDuration]="300">
+            </circle-progress>
         </div>
-        <div class="container">
-            <div class="skills__child css">80%</div>
-        </div>
-        <div class="iconos-edicion">
-            <h3>Javascript</h3>
-            <div>
-                <i class="fa-solid fa-pen"></i>
-                <i class="fa-solid fa-trash"></i>
+        <div class="nuevo-hs">
+            <div class="iconos-edicion">
+                <h3>Javascript</h3>
+                <div>
+                    <i class="fa-solid fa-pen"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
             </div>
-        </div>
-        <div class="container">
-            <div class="skills__child js">50%</div>
+            <circle-progress
+                [percent]="50" 
+                [radius]="100" 
+                [outerStrokeWidth]="16" 
+                [innerStrokeWidth]="8"
+                [outerStrokeColor]="'#F44336'" 
+                [innerStrokeColor]="'false'" 
+                [showSubtitle]="false"
+                [titleFontSize]="'40'" 
+                [animation]="true" 
+                [animationDuration]="600">
+            </circle-progress>
         </div>
     </div>
 </section>
