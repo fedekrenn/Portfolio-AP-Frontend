@@ -1,0 +1,48 @@
+/* Experiencia */
+
+.contenedor {
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: #ffffff80;
+    box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
+}
+
+.contenedor__barra-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.contenedor__child {
+    display: flex;
+    margin: 30px 0;
+}
+
+.contenedor img {
+    width: 100px;
+    object-fit: contain;
+    max-height: 100px;
+}
+
+.descripcion-puesto {
+    margin: 0 20px;
+}
+
+.descripcion-puesto__info {
+    display: inline;
+    margin-right: 20px;
+}
+
+.iconos-edicion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.iconos-edicion i {
+    margin: 10px 5px;
+    align-self: flex-start;
+}
