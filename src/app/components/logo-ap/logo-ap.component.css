@@ -1,3 +1,10 @@
 .logo-header{
     width: 200px;
   }
+
+  @media (max-width: 450px){
+    
+    .logo-header{
+      display: none;
+    }
+  }

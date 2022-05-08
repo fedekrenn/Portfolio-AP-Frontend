@@ -46,3 +46,20 @@
     margin: 10px 5px;
     align-self: flex-start;
 }
+
+@media (max-width: 750px) {
+
+    .contenedor__child {
+        flex-direction: column;
+        align-items: center
+    }
+
+    .contenedor__child img {
+        width: 150px;
+        margin: 20px;
+    }
+
+    .iconos-edicion {
+        margin-top: 10px;
+    }
+}
