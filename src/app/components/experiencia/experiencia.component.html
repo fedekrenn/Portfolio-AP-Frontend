@@ -3,17 +3,13 @@
         <h2>Experiencia</h2>
         <i class="fa-solid fa-plus"></i>
     </div>
-    <div class="contenedor__child">
-        <img src="./assets/images/experiencia/startek.png" alt="Empresa Startek">
+    <div class="contenedor__child" *ngFor="let experiencia of miPortfolio">
+        <img [src]="experiencia.img" [alt]="experiencia.company">
         <div class="descripcion-puesto">
-            <h3>Analista de calidad</h3>
-            <h4 class="descripcion-puesto__info">Startek</h4>
-            <h5 class="descripcion-puesto__info">2013 - actualidad</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur odit reprehenderit vel iure
-                accusamus ea ipsa fuga. Dolores mollitia vero nisi tempore voluptas officia temporibus
-                molestiae! Deleniti reprehenderit laudantium, reiciendis optio hic officia voluptatibus esse non
-                quibusdam? Optio nostrum consequatur magnam officia quam veritatis facere adipisci nemo
-                corporis? Facere, eaque.</p>
+            <h3>{{experiencia.position}}</h3>
+            <h4 class="descripcion-puesto__info">{{experiencia.company}}</h4>
+            <h5 class="descripcion-puesto__info">{{experiencia.start}} - {{experiencia.end}}</h5>
+            <p>{{experiencia.description}}</p>
         </div>
         <div class="iconos-edicion">
             <i class="fa-solid fa-pen"></i>

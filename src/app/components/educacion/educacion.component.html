@@ -3,30 +3,17 @@
         <h2>Educación</h2>
         <i class="fa-solid fa-plus"></i>
     </div>
-    <div class="contenedor__child">
-        <img src="../../../assets/icons/APLogo-20-20.png" alt="Argentina programa">
+    <div class="contenedor__child" *ngFor="let educacion of miPortfolio">
+        <img [src]="educacion.img" [alt]="educacion.establishment">
         <div class="descripcion-puesto">
-            <h3>Argentina Programa</h3>
-            <h4>Desarrollador Web Fullstack</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur odit reprehenderit Lorem ipsum
-                dolor sit amet consectetur, adipisicing elit. Nesciunt, sint!</p>
+            <h3>{{educacion.title}}</h3>
+            <h4>{{educacion.establishment}} - {{educacion.year}}</h4>
+            <p>{{educacion.description}}</p>
         </div>
         <div class="iconos-edicion">
             <i class="fa-solid fa-pen"></i>
             <i class="fa-solid fa-trash"></i>
         </div>
     </div>
-    <div class="contenedor__child">
-        <img src="../../../assets/icons/coderhouse_logo.png" alt="Coderhouse">
-        <div class="descripcion-puesto">
-            <h3>Coderhouse</h3>
-            <h4>Desarrollador Web Fullstack</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur odit reprehenderit Lorem ipsum
-                dolor sit amet consectetur, adipisicing elit. Nesciunt, sint!</p>
-        </div>
-        <div class="iconos-edicion">
-            <i class="fa-solid fa-pen"></i>
-            <i class="fa-solid fa-trash"></i>
-        </div>
-    </div>
+    
 </section>

@@ -1,0 +1,65 @@
+{
+    "name":"Federico Krenn",
+    "img":"assets/images/fotoLinkedin.jpg",
+    "position":"Fullstack Developer",
+    "ubication":"Córdoba, Argentina",
+    "about":"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ipsam dignissimos sit eius voluptatum assumenda suscipit qui vel laudantium, obcaecati quia ipsum esse excepturi rem sequi veniam alias molestiae fuga, hic eum quis soluta eligendi similique in. Eveniet itaque, magnam deleniti dolor fugiat maxime, earum voluptates ex harum inventore quibusdam! Consectetur porro commodi ea culpa perferendis nemo sunt dolore placeat, nihil officia numquam sequi veniam expedita.",
+    "experiencia":[
+       {
+          "company":"Startek",
+          "position":"Analista de calidad",
+          "img":"assets/images/experiencia/startek.png",
+          "start":"2013",
+          "end":"Actualidad",
+          "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur odit reprehenderit vel iure accusamus ea ipsa fuga. Dolores mollitia vero nisi tempore voluptas officia temporibus molestiae! Deleniti reprehenderit laudantium, reiciendis optio hic officia voluptatibus esse non quibusdam? Optio nostrum consequatur magnam officia quam veritatis facere adipisci nemo corporis? Facere, eaque."
+       }
+    ],
+    "educacion":[
+        {
+            "establishment":"Argentina Programa",
+            "title":"Desarrollador Web Fullstack",
+            "img":"assets/icons/argentina-programa.png",
+            "year":"2022",
+            "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur odit reprehenderit Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, sint!"
+        },
+        {
+            "establishment":"Coderhouse",
+            "title":"Desarrollador Web Fullstack",
+            "img":"assets/icons/coderhouse.png",
+            "year":"2022",
+            "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur odit reprehenderit Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, sint!"
+        }
+    ],
+    "skills":[
+        {
+            "name":"Html",
+            "percent":"85",
+            "color":"#04AA6D"
+        },
+        {
+            "name":"Css",
+            "percent":"70",
+            "color":"#2196F3"
+        },
+        {
+            "name":"Javascript",
+            "percent":"50",
+            "color":"#F44336"
+        }
+    ],
+    "proyects":[
+        {
+            "name":"Cocinando Fácil | Web para gestión de recetas y obtener ideas",
+            "url":"https://fedekrenn.github.io/proyectoJS/",
+            "img":"assets/images/proyectos/cocinando-facil.svg",
+            "description":"Proyecto final de cursada Javascript en Coderhouse. El mismo es un simulador de cocina que permite cargar recetas, compararlas, filtrar por comidas rápidas y aquellas que son aptas para veganos. Además cuenta con conexión a una API que permite ingresar un ingrediente y la web automáticamente te devuelve recetas que podés cocinar con dicho ingrediente. Como añadido tiene función modo oscuro. Las recetas guardadas son almacenadas en el localStorage para tenerlas disponibles en una próxima sesión de navegación. Tecnologías utilizadas: Html, Css, Javascript."
+        },
+        {
+            "name":"Sereno Bienestar | Un lugar para encontrarte contigo mismo",
+            "url":"https://fedekrenn.github.io/serenoBienestar/",
+            "img":"assets/images/proyectos/sereno-bienestar.png",
+            "description":"Proyecto final de cursada de Desarrollo Web en Coderhouse. Es una web de 5 páginas maquetada con flexbox en mayor medida y grid. Además se usa framework de bootstrap e incluye el pre-procesador de Sass. Cuenta con librería de animaciones y está optimizada para SEO y a la vez es responsive, se puede visualizar cómodamente el contenido tanto en mobile, tablets o desktop."
+        }
+    ]
+ } 
+ 
