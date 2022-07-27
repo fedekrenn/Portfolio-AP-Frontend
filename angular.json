@@ -29,7 +29,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/material-design-lite/dist/material.min.js"
+            ]
           },
           "configurations": {
             "production": {
