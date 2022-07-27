@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/service/portfolio.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-header',
@@ -7,13 +8,26 @@ import { PortfolioService } from 'src/app/service/portfolio.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  miPortfolio:any;
-  constructor(private datosPortfolio:PortfolioService) { }
+  isLogged: boolean = false;
+
+
+
+  miPortfolio: any;
+  constructor(private datosPortfolio: PortfolioService, private tokenService: TokenService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data =>{
+    this.datosPortfolio.obtenerDatos().subscribe(data => {
       this.miPortfolio = data;
     });
+
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    }
+  }
+
+  onLogout() {
+    this.tokenService.logout();
+    window.location.reload();
   }
 
 }

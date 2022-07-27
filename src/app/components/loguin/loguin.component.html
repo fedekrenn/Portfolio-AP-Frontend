@@ -3,19 +3,19 @@
     <h2 class="fw-bold mb-2">Acceso al portfolio</h2>
     <p class="mb-5">Ingresa tu usuario y contraseña</p>
 
-    <form  class="form-login__input" (ngSubmit)="onLogin()" novalidate>
+    <form #f="ngForm" class="form-login__input" (ngSubmit)="onLogin()" novalidate>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="usserName" name="usserName" >
+        <input class="mdl-textfield__input" type="text" id="usserName" name="usserName" [(ngModel)]="usserName" required>
         <label class="mdl-textfield__label" for="usserName">Usuario</label>
       </div>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="password" id="password" name="password" >
+        <input class="mdl-textfield__input" type="password" id="password" name="password" [(ngModel)]="password" required>
         <label class="mdl-textfield__label" for="password">Password</label>
       </div>
       <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit">Login</button>
     </form>
 
-    <p class="mb-0">No tienes cuenta? <a href="/" class="register-btn">Registrarse</a></p>
+    <p>No tienes cuenta? <a href="/" class="register-btn">Registrarse</a></p>
     <p><a href="/">Volver</a></p>
   </div>
 </div>

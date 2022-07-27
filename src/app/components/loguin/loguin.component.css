@@ -36,4 +36,9 @@
 
 .register-btn{
     font-weight: bold;
+    color: inherit;
+}
+
+a {
+    color: inherit;
 }

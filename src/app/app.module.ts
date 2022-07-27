@@ -14,6 +14,8 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { LoguinComponent } from './components/loguin/loguin.component';
+import { FormsModule } from '@angular/forms';
+import { interceptorProvider } from './service/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -32,9 +34,12 @@ import { LoguinComponent } from './components/loguin/loguin.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     NgCircleProgressModule.forRoot({})
   ],
-  providers: [],
+  providers: [
+    interceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

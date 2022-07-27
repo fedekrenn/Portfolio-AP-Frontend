@@ -10,7 +10,8 @@
                         class="fa-brands fa-github"></i><span> Github</span></a></li>
             <li><a href="https://www.linkedin.com/in/fkrenn/" target="_blank"><i class="fa-brands fa-linkedin"></i>
                     <span> Linkedin</span></a></li>
-            <li><a href="/loguin"><i class="fa-solid fa-circle-user icono-logueo"></i></a></li>
+            <li *ngIf="!isLogged"><a href="/loguin"><i class="fa-solid fa-circle-user icono-logueo"></i></a></li>
+            <li *ngIf="isLogged"><i class="fa-solid fa-arrow-right-from-bracket icono-logueo" (click)="onLogout()"></i></li>
         </ul>
 
     </nav>
