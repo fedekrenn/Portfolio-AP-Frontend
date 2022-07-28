@@ -27,11 +27,10 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/material-design-lite/dist/material.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -16,6 +15,14 @@ import { HomeComponent } from './components/home/home.component';
 import { LoguinComponent } from './components/loguin/loguin.component';
 import { FormsModule } from '@angular/forms';
 import { interceptorProvider } from './service/interceptor.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ModalComponent } from './components/experiencia/modal/modal.component';
+import {MatButtonModule} from '@angular/material/button';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { ReactiveFormsModule } from "@angular/forms";
+import { CommonModule } from "@angular/common";
+import { EditExperienciaComponent } from './components/experiencia/edit-experiencia/edit-experiencia.component';
 
 @NgModule({
   declarations: [
@@ -28,14 +35,22 @@ import { interceptorProvider } from './service/interceptor.service';
     SkillsComponent,
     ProyectosComponent,
     HomeComponent,
-    LoguinComponent
+    LoguinComponent,
+    ModalComponent,
+    EditExperienciaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: [
     interceptorProvider

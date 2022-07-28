@@ -18,6 +18,7 @@
 
 .contenedor__child {
     display: flex;
+    justify-content: space-between;
     margin: 30px 0;
 }
 
@@ -29,6 +30,7 @@
 
 .descripcion-puesto {
     margin: 0 20px;
+    width: 100%;
 }
 
 .descripcion-puesto__info {
@@ -37,7 +39,7 @@
 }
 
 .iconos-edicion {
-    display: flex;
+    display: flex ;
     justify-content: space-between;
     align-items: center
 }

@@ -1,0 +1,16 @@
+<form (ngSubmit)="onUpdate(data.id)" novalidate #f="ngForm">
+    <h2 mat-dialog-title>Cargar nueva experiencia</h2>
+    <div class="form-container">
+        <label for="nombreExperiencia">Nombre del puesto
+            <input type="text" id="nombreExperiencia" name="nombreExperiencia" placeholder="Ej: Gerente" [(ngModel)]="expLab.nombreExperiencia" required/>
+        </label>
+        <label for="descripcionExperiencia">Descripción de las tareas
+            <textarea id="descripcionExperiencia" name="descripcionExperiencia"
+                placeholder="Ej: Desarrollé una app para Google" [(ngModel)]="expLab.descripcionExperiencia" required></textarea>
+        </label>
+    </div>
+    <div mat-dialog-actions class="form-container__btn">
+        <button mat-button (click)="onNoClick()">Cancelar</button>
+        <button mat-button cdkFocusInitial class="send-button" type="submit">Actualizar</button>
+    </div>
+</form>

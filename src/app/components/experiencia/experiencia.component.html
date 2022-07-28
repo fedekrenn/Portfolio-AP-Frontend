@@ -1,19 +1,19 @@
 <section class="contenedor">
     <div class="contenedor__barra-titulo">
         <h2>Experiencia</h2>
-        <i class="fa-solid fa-plus"></i>
+        <i class="fa-solid fa-plus" mat-button (click)="openDialog()" *ngIf="isLogged"></i>
     </div>
-    <div class="contenedor__child" *ngFor="let experiencia of miPortfolio">
-        <img [src]="experiencia.img" [alt]="experiencia.company">
+    <div class="contenedor__child" *ngFor="let oneExp of experiencia">
+        <img src="../../../assets/images/experiencia/startek.png" [alt]="oneExp">
         <div class="descripcion-puesto">
-            <h3>{{experiencia.position}}</h3>
-            <h4 class="descripcion-puesto__info">{{experiencia.company}}</h4>
-            <h5 class="descripcion-puesto__info">{{experiencia.start}} - {{experiencia.end}}</h5>
-            <p>{{experiencia.description}}</p>
+            <h3>{{oneExp.nombreExperiencia}}</h3>
+            <h4 class="descripcion-puesto__info"></h4>
+            <h5 class="descripcion-puesto__info"></h5>
+            <p>{{oneExp.descripcionExperiencia}}</p>
         </div>
         <div class="iconos-edicion">
-            <i class="fa-solid fa-pen"></i>
-            <i class="fa-solid fa-trash"></i>
+            <i class="fa-solid fa-pen" *ngIf="isLogged" (click)="openDialog2(oneExp.id)"></i>
+            <i class="fa-solid fa-trash" *ngIf="isLogged" (click)="delete(oneExp.id)"></i>
         </div>
     </div>
 </section>
