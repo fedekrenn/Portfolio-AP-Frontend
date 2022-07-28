@@ -1,13 +1,27 @@
 <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
     <h2 mat-dialog-title>Cargar nueva experiencia</h2>
     <div class="form-container">
+        
         <label for="nombreExperiencia">Nombre del puesto
             <input type="text" id="nombreExperiencia" name="nombreExperiencia" placeholder="Ej: Gerente" [(ngModel)]="nombreExperiencia" required/>
+        </label>
+        <label for="compania">Nombre de la empresa
+            <input type="text" id="compania" name="compania" placeholder="Ej: Google" [(ngModel)]="compania" required/>
+        </label>
+        <label for="startExp">Fecha de inicio
+            <input type="number" id="startExp" name="startExp" placeholder="Sólo el año" [(ngModel)]="startExp" required/>
+        </label>
+        <label for="endExp">Fecha de fin
+            <input type="text" id="endExp" name="endExp" placeholder="Año o 'Actualidad'" [(ngModel)]="endExp" required/>
+        </label>
+        <label for="imgExp">Imagen
+            <input type="text" id="imgExp" name="imgExp" placeholder="Carga la URL" [(ngModel)]="imgExp" required/>
         </label>
         <label for="descripcionExperiencia">Descripción de las tareas
             <textarea id="descripcionExperiencia" name="descripcionExperiencia"
                 placeholder="Ej: Desarrollé una app para Google" [(ngModel)]="descripcionExperiencia" required></textarea>
         </label>
+        
     </div>
     <div mat-dialog-actions class="form-container__btn">
         <button mat-button (click)="onNoClick()">Cancelar</button>

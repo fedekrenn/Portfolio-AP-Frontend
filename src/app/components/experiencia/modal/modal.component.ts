@@ -12,6 +12,10 @@ import { ExperienciaService } from 'src/app/service/experiencia.service';
 export class ModalComponent implements OnInit {
   nombreExperiencia: string = '';
   descripcionExperiencia: string = '';
+  compania: string = '';
+  imgExp: string = '';
+  startExp: number;
+  endExp: string = '';
 
   constructor(
     public dialogRef: MatDialogRef<ModalComponent>,
@@ -28,7 +32,7 @@ export class ModalComponent implements OnInit {
   }
 
   onCreate(): void {
-    const expe = new Experiencia(this.nombreExperiencia, this.descripcionExperiencia);
+    const expe = new Experiencia(this.nombreExperiencia, this.descripcionExperiencia, this.compania, this.imgExp, this.startExp, this.endExp);
     this.sExperiencia.save(expe).subscribe(data => {
       alert('Experiencia creada');
       this.dialogRef.close();

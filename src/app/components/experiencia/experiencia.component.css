@@ -26,6 +26,8 @@
     width: 100px;
     object-fit: contain;
     max-height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .descripcion-puesto {

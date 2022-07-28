@@ -4,11 +4,11 @@
         <i class="fa-solid fa-plus" mat-button (click)="openDialog()" *ngIf="isLogged"></i>
     </div>
     <div class="contenedor__child" *ngFor="let oneExp of experiencia">
-        <img src="../../../assets/images/experiencia/startek.png" [alt]="oneExp">
+        <img [src]="oneExp.imgExp" [alt]="oneExp.nombreExperiencia">
         <div class="descripcion-puesto">
             <h3>{{oneExp.nombreExperiencia}}</h3>
-            <h4 class="descripcion-puesto__info"></h4>
-            <h5 class="descripcion-puesto__info"></h5>
+            <h4 class="descripcion-puesto__info">{{oneExp.compania}}</h4>
+            <h5 class="descripcion-puesto__info">{{oneExp.startExp}} - {{oneExp.endExp}}</h5>
             <p>{{oneExp.descripcionExperiencia}}</p>
         </div>
         <div class="iconos-edicion">

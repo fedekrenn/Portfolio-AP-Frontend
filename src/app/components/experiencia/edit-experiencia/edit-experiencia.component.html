@@ -4,6 +4,18 @@
         <label for="nombreExperiencia">Nombre del puesto
             <input type="text" id="nombreExperiencia" name="nombreExperiencia" placeholder="Ej: Gerente" [(ngModel)]="expLab.nombreExperiencia" required/>
         </label>
+        <label for="compania">Nombre de la empresa
+            <input type="text" id="compania" name="compania" placeholder="Ej: Google" [(ngModel)]="expLab.compania" required/>
+        </label>
+        <label for="startExp">Fecha de inicio
+            <input type="number" id="startExp" name="startExp" placeholder="Sólo el año" [(ngModel)]="expLab.startExp" required/>
+        </label>
+        <label for="endExp">Fecha de fin
+            <input type="text" id="endExp" name="endExp" placeholder="Año o 'Actualidad'" [(ngModel)]="expLab.endExp" required/>
+        </label>
+        <label for="imgExp">Imagen
+            <input type="text" id="imgExp" name="imgExp" placeholder="Carga la URL" [(ngModel)]="expLab.imgExp" required/>
+        </label>
         <label for="descripcionExperiencia">Descripción de las tareas
             <textarea id="descripcionExperiencia" name="descripcionExperiencia"
                 placeholder="Ej: Desarrollé una app para Google" [(ngModel)]="expLab.descripcionExperiencia" required></textarea>
