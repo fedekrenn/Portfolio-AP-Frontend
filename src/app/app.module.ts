@@ -23,6 +23,8 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia/edit-experiencia.component';
+import { ModalEducacionComponent } from './components/educacion/modal-educacion/modal-educacion.component';
+import { EditEducacionComponent } from './components/educacion/edit-educacion/edit-educacion.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { EditExperienciaComponent } from './components/experiencia/edit-experien
     HomeComponent,
     LoguinComponent,
     ModalComponent,
-    EditExperienciaComponent
+    EditExperienciaComponent,
+    ModalEducacionComponent,
+    EditEducacionComponent
   ],
   imports: [
     BrowserModule,

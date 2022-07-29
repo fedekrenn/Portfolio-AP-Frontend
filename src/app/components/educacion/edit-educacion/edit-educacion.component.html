@@ -1,0 +1,28 @@
+<form (ngSubmit)="onUpdate(data.id)" novalidate #f="ngForm">
+    <h2 mat-dialog-title>Modificar la educacion</h2>
+    <div class="form-container">
+        <label for="nombreEducacion">Carrera
+            <input type="text" id="nombreEducacion" name="nombreEducacion" placeholder="Ej: Gerente" [(ngModel)]="eduEdu.nombreEducacion" required/>
+        </label>
+        <label for="establecimiento">Nombre de la institución
+            <input type="text" id="establecimiento" name="establecimiento" placeholder="Ej: Google" [(ngModel)]="eduEdu.establecimiento" required/>
+        </label>
+        <label for="startEducacion">Fecha de inicio
+            <input type="number" id="startEducacion" name="startEducacion" placeholder="Sólo el año" [(ngModel)]="eduEdu.startEducacion" required/>
+        </label>
+        <label for="endEducacion">Fecha de fin
+            <input type="text" id="endEducacion" name="endEducacion" placeholder="Año o 'Actualidad'" [(ngModel)]="eduEdu.endEducacion" required/>
+        </label>
+        <label for="imgEducacion">Imagen
+            <input type="text" id="imgEducacion" name="imgEducacion" placeholder="Carga la URL" [(ngModel)]="eduEdu.imgEducacion" required/>
+        </label>
+        <label for="descripcionEducacion">Descripción del estudio
+            <textarea id="descripcionEducacion" name="descripcionEducacion"
+                placeholder="Ej: Desarrollé una app para Google" [(ngModel)]="eduEdu.descripcionEducacion" required></textarea>
+        </label>
+    </div>
+    <div mat-dialog-actions class="form-container__btn">
+        <button mat-button (click)="onNoClick()">Cancelar</button>
+        <button mat-button cdkFocusInitial class="send-button" type="submit">Actualizar</button>
+    </div>
+</form>

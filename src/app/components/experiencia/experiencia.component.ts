@@ -42,6 +42,17 @@ export class ExperienciaComponent implements OnInit {
     });
   }
 
+  delete(id: any): void {
+    if (id != undefined) {
+      this.sExperiencia.delete(id).subscribe(data => {
+        alert('Experiencia eliminada');
+        this.cargarExperiencia();
+      }, error => {
+        alert('Error al eliminar experiencia');
+      });
+    }
+  }
+
   openDialog(): void {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '500px',
@@ -55,16 +66,5 @@ export class ExperienciaComponent implements OnInit {
       data: { id: id }
     });
     console.log(id)
-  }
-
-  delete(id: any): void {
-    this.sExperiencia.delete(id).subscribe(data => {
-      alert('Experiencia eliminada');
-      this.cargarExperiencia();
-    }, error => {
-      alert('Error al eliminar experiencia');
-      this.cargarExperiencia();
-    }
-    );
   }
 }

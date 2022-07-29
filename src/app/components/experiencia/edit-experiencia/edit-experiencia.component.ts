@@ -1,6 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
 import { Experiencia } from 'src/app/model/experiencia';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
 
@@ -15,7 +14,6 @@ export class EditExperienciaComponent implements OnInit {
 
   constructor(
     private sExperiencia: ExperienciaService,
-    private activatedRouter: ActivatedRoute,
     public dialogRef: MatDialogRef<EditExperienciaComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }

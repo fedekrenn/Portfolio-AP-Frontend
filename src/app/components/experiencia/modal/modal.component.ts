@@ -10,6 +10,7 @@ import { ExperienciaService } from 'src/app/service/experiencia.service';
 })
 
 export class ModalComponent implements OnInit {
+  
   nombreExperiencia: string = '';
   descripcionExperiencia: string = '';
   compania: string = '';
