@@ -1,1 +1,5 @@
 @import url(../experiencia/experiencia.component.css);
+
+.descripcion-puesto__url a{
+    font-weight: bold;
+}

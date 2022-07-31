@@ -1,0 +1,32 @@
+<form (ngSubmit)="onUpdate(data.id)" novalidate #f="ngForm">
+    <h2 mat-dialog-title>Modificar el proyecto</h2>
+    <div class="form-container">
+
+        <label for="nombreProyecto">Nombre del proyecto
+            <input type="text" id="nombreProyecto" name="nombreProyecto" placeholder="Ej: Calculadora básica"
+                [(ngModel)]="proyectos.nombreProyecto" required />
+        </label>
+        <label for="urlRepo">URL del repositorio
+            <input type="text" id="urlRepo" name="urlRepo" placeholder="Carga la URL"
+                [(ngModel)]="proyectos.urlRepo" required />
+        </label>
+        <label for="urlDeploy">URL del deploy
+            <input type="text" id="urlDeploy" name="urlDeploy" placeholder="Carga la URL"
+                [(ngModel)]="proyectos.urlDeploy" required />
+        </label>
+        <label for="imgProyecto">Imagen
+            <input type="text" id="imgProyecto" name="imgProyecto" placeholder="Carga la URL"
+                [(ngModel)]="proyectos.imgProyecto" required />
+        </label>
+        <label for="descripcionProyecto">Descripción del proyecto
+            <textarea id="descripcionProyecto" name="descripcionProyecto"
+                placeholder="Ej: Desarrollé con JS Vanilla una calculadora..." [(ngModel)]="proyectos.descripcionProyecto"
+                required></textarea>
+        </label>
+
+    </div>
+    <div mat-dialog-actions class="form-container__btn">
+        <button mat-button (click)="onNoClick()">Cancelar</button>
+        <button mat-button cdkFocusInitial class="send-button" type="submit">Actualizar</button>
+    </div>
+</form>

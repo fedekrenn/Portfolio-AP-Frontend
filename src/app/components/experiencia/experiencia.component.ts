@@ -17,6 +17,7 @@ export class ExperienciaComponent implements OnInit {
   experiencia: Experiencia[] = [];
 
   miPortfolio: any;
+  
   constructor(
     private datosPortfolio: PortfolioService,
     private sExperiencia: ExperienciaService,

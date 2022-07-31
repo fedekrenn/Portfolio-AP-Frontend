@@ -1,17 +1,22 @@
 <section class="contenedor">
     <div class="contenedor__barra-titulo">
         <h2>Proyectos</h2>
-        <i class="fa-solid fa-plus"></i>
+        <i class="fa-solid fa-plus" mat-button (click)="openDialog()" *ngIf="isLogged"></i>
     </div>
-    <div class="contenedor__child" *ngFor="let proyecto of miPortfolio">
-        <img [src]="proyecto.img" [alt]="proyecto.name">
+    <div class="contenedor__child" *ngFor="let oneProy of proyectos">
+        <img [src]="oneProy.imgProyecto" [alt]="oneProy.nombreProyecto">
         <div class="descripcion-puesto">
-            <h3><a [href]="proyecto.url" target="_blank">{{proyecto.name}}</a></h3>
-            <p>{{proyecto.description}}</p>
+            <h3>{{oneProy.nombreProyecto}}</h3>
+            <p class="descripcion-puesto__url">
+                <a [href]="oneProy.urlRepo" target="_blank">Repositorio</a>
+                -
+                <a [href]="oneProy.urlDeploy" target="_blank">Deploy</a>
+            </p>
+            <p>{{oneProy.descripcionProyecto}}</p>
         </div>
         <div class="iconos-edicion">
-            <i class="fa-solid fa-pen"></i>
-            <i class="fa-solid fa-trash"></i>
+            <i class="fa-solid fa-pen" *ngIf="isLogged" (click)="openDialog2(oneProy.id)"></i>
+            <i class="fa-solid fa-trash" *ngIf="isLogged" (click)="delete(oneProy.id)"></i>
         </div>
     </div>
 </section>

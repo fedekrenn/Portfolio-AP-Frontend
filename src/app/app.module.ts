@@ -25,6 +25,8 @@ import { CommonModule } from "@angular/common";
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia/edit-experiencia.component';
 import { ModalEducacionComponent } from './components/educacion/modal-educacion/modal-educacion.component';
 import { EditEducacionComponent } from './components/educacion/edit-educacion/edit-educacion.component';
+import { EditProyectosComponent } from './components/proyectos/edit-proyectos/edit-proyectos.component';
+import { ModalProyectosComponent } from './components/proyectos/modal-proyectos/modal-proyectos.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { EditEducacionComponent } from './components/educacion/edit-educacion/ed
     ModalComponent,
     EditExperienciaComponent,
     ModalEducacionComponent,
-    EditEducacionComponent
+    EditEducacionComponent,
+    EditProyectosComponent,
+    ModalProyectosComponent
   ],
   imports: [
     BrowserModule,
