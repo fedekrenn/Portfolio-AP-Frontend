@@ -27,6 +27,8 @@ import { ModalEducacionComponent } from './components/educacion/modal-educacion/
 import { EditEducacionComponent } from './components/educacion/edit-educacion/edit-educacion.component';
 import { EditProyectosComponent } from './components/proyectos/edit-proyectos/edit-proyectos.component';
 import { ModalProyectosComponent } from './components/proyectos/modal-proyectos/modal-proyectos.component';
+import { ModalSkillsComponent } from './components/skills/modal-skills/modal-skills.component';
+import { EditSkillsComponent } from './components/skills/edit-skills/edit-skills.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { ModalProyectosComponent } from './components/proyectos/modal-proyectos/
     ModalEducacionComponent,
     EditEducacionComponent,
     EditProyectosComponent,
-    ModalProyectosComponent
+    ModalProyectosComponent,
+    ModalSkillsComponent,
+    EditSkillsComponent
   ],
   imports: [
     BrowserModule,

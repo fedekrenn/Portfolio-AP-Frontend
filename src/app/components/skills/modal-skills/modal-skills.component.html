@@ -1,0 +1,21 @@
+<form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+    <h2 mat-dialog-title>Cargar nuevo soft/hard Skill</h2>
+    <div class="form-container">
+
+        <label for="nombreSkill">Nombre de la habilidad
+            <input type="text" id="nombreSkill" name="nombreSkill" placeholder="Ej: Negociación"
+                [(ngModel)]="nombreSkill" required />
+        </label>
+        <label for="porcentajeSkill">Nivel de habilidad
+            <input type="range" id="porcentajeSkill" name="porcentajeSkill" step="5" [(ngModel)]="porcentajeSkill" required />
+        </label>
+        <label for="colorSkill">Aplica un color a la habilidad
+            <input type="color" id="colorSkill" name="colorSkill" [(ngModel)]="colorSkill" required />
+        </label>
+
+    </div>
+    <div mat-dialog-actions class="form-container__btn">
+        <button mat-button (click)="onNoClick()">Cancelar</button>
+        <button mat-button cdkFocusInitial class="send-button" type="submit">Enviar</button>
+    </div>
+</form>

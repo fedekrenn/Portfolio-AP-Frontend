@@ -1,5 +1,5 @@
 export class Proyectos {
-    id: number;
+    id?: number;
     nombreProyecto: string;
     urlRepo: string;
     urlDeploy: string;
