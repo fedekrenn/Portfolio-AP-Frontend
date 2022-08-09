@@ -1,12 +1,25 @@
 export class persona {
     id?: number;
-    nombre: string;
-    apellido: string;
-    img: string;
+    nombrePersona: string;
+    puestoPersona: string;
+    ubicacionPersona: string;
+    imgPersona: string;
+    sobreMi: string;
+    telPersona: number;
+    emailPersona: string;
+    githubPersona: string;
+    linkedinPersona: string;
 
-    constructor(nombre: string, apellido: string, img: string) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.img = img;
+    constructor(nombrePersona: string, puestoPersona: string, ubicacionPersona: string, imgPersona: string, sobreMi: string, telPersona: number, emailPersona: string, githubPersona: string, linkedinPersona: string) {
+        this.nombrePersona = nombrePersona;
+        this.puestoPersona = puestoPersona;
+        this.ubicacionPersona = ubicacionPersona;
+        this.imgPersona = imgPersona;
+        this.sobreMi = sobreMi;
+        this.telPersona = telPersona;
+        this.emailPersona = emailPersona;
+        this.githubPersona = githubPersona;
+        this.linkedinPersona = linkedinPersona;
     }
+    
 }
