@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Proyectos } from 'src/app/model/proyectos';
-import { PortfolioService } from 'src/app/service/portfolio.service';
 import { TokenService } from 'src/app/service/token.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ProyectosService } from 'src/app/service/proyectos.service';
@@ -20,7 +19,6 @@ export class ProyectosComponent implements OnInit {
   miPortfolio:any;
 
   constructor(
-    private datosPortfolio:PortfolioService,
     private sProyectos: ProyectosService,
     private tokenService: TokenService,
     public dialog: MatDialog
@@ -32,9 +30,6 @@ export class ProyectosComponent implements OnInit {
   ngOnInit(): void {
     this.cargarProyectos();
     this.tokenService.getToken() ? this.isLogged = true : this.isLogged = false;
-    this.datosPortfolio.obtenerDatos().subscribe(data =>{
-      this.miPortfolio = data.proyects;
-    });
   }
 
   cargarProyectos(): void {

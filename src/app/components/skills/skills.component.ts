@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Skills } from 'src/app/model/skills';
-import { PortfolioService } from 'src/app/service/portfolio.service';
 import { SkillsService } from 'src/app/service/skills.service';
 import { TokenService } from 'src/app/service/token.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -16,10 +15,7 @@ export class SkillsComponent implements OnInit {
 
   skills: Skills[] = [];
 
-  miPortfolio: any;
-
   constructor(
-    private datosPortfolio: PortfolioService,
     private sSkills: SkillsService,
     private tokenService: TokenService,
     public dialog: MatDialog
@@ -33,10 +29,6 @@ export class SkillsComponent implements OnInit {
   ngOnInit(): void {
     this.cargarSkills();
     this.tokenService.getToken() ? this.isLogged = true : this.isLogged = false;
-
-    this.datosPortfolio.obtenerDatos().subscribe(data => {
-      this.miPortfolio = data.skills;
-    });
   }
 
   cargarSkills(): void {

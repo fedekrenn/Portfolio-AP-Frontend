@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/model/experiencia';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
-import { PortfolioService } from 'src/app/service/portfolio.service';
 import { TokenService } from 'src/app/service/token.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from './modal/modal.component';
@@ -16,10 +15,7 @@ export class ExperienciaComponent implements OnInit {
 
   experiencia: Experiencia[] = [];
 
-  miPortfolio: any;
-  
   constructor(
-    private datosPortfolio: PortfolioService,
     private sExperiencia: ExperienciaService,
     private tokenService: TokenService,
     public dialog: MatDialog
@@ -29,12 +25,9 @@ export class ExperienciaComponent implements OnInit {
   isLogged = false;
 
   ngOnInit(): void {
+
     this.cargarExperiencia();
     this.tokenService.getToken() ? this.isLogged = true : this.isLogged = false;
-
-    this.datosPortfolio.obtenerDatos().subscribe(data => {
-      this.miPortfolio = data.experiencia;
-    });
   }
 
   cargarExperiencia(): void {

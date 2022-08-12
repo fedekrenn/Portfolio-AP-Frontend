@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
-import { PortfolioService } from 'src/app/service/portfolio.service';
 import { TokenService } from 'src/app/service/token.service';
 import { EditEducacionComponent } from './edit-educacion/edit-educacion.component';
 import { ModalEducacionComponent } from './modal-educacion/modal-educacion.component';
@@ -17,10 +16,7 @@ export class EducacionComponent implements OnInit {
 
   educacion: Educacion[] = [];
 
-  miPortfolio: any;
-
   constructor(
-    private datosPortfolio: PortfolioService,
     private sEducacion: EducacionService,
     private tokenService: TokenService,
     public dialog: MatDialog
@@ -29,12 +25,9 @@ export class EducacionComponent implements OnInit {
   isLogged = false;
 
   ngOnInit(): void {
+
     this.cargarEducacion();
     this.tokenService.getToken() ? this.isLogged = true : this.isLogged = false;
-
-    this.datosPortfolio.obtenerDatos().subscribe(data => {
-      this.miPortfolio = data.educacion;
-    });
   }
 
   cargarEducacion(): void {
@@ -44,7 +37,7 @@ export class EducacionComponent implements OnInit {
   }
 
   delete(id: any): void {
-    if (id != undefined){
+    if (id != undefined) {
       this.sEducacion.delete(id).subscribe(data => {
         alert('Educacion eliminada');
         this.cargarEducacion();
