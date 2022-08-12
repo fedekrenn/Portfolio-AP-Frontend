@@ -29,6 +29,7 @@ import { EditProyectosComponent } from './components/proyectos/edit-proyectos/ed
 import { ModalProyectosComponent } from './components/proyectos/modal-proyectos/modal-proyectos.component';
 import { ModalSkillsComponent } from './components/skills/modal-skills/modal-skills.component';
 import { EditSkillsComponent } from './components/skills/edit-skills/edit-skills.component';
+import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de/edit-acerca-de.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { EditSkillsComponent } from './components/skills/edit-skills/edit-skills
     EditProyectosComponent,
     ModalProyectosComponent,
     ModalSkillsComponent,
-    EditSkillsComponent
+    EditSkillsComponent,
+    EditAcercaDeComponent
   ],
   imports: [
     BrowserModule,
