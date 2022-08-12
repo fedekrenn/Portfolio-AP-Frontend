@@ -1,0 +1,45 @@
+<form (ngSubmit)="onUpdate(data.id)" novalidate #f="ngForm">
+    <h2 mat-dialog-title>Modificar tus datos</h2>
+    <div class="form-container">
+        <label for="nombrePersona">Tu nombre completo
+            <input type="text" id="nombrePersona" name="nombrePersona" placeholder="Ej: Luis Perez"
+                [(ngModel)]="persona.nombrePersona" required />
+        </label>
+        <label for="puestoPersona">Puesto o cargo que ocupas
+            <input type="text" id="puestoPersona" name="puestoPersona" placeholder="Ej: Diseñador Multimedia"
+                [(ngModel)]="persona.puestoPersona" required />
+        </label>
+        <label for="ubicacionPersona">Ciudad de residencia
+            <input type="text" id="ubicacionPersona" name="ubicacionPersona" placeholder="Cataluña"
+                [(ngModel)]="persona.ubicacionPersona" required />
+        </label>
+        <label for="imgPersona">URL de tu foto de perfil
+            <input type="url" id="imgPersona" name="imgPersona" placeholder="Carga la URL"
+                [(ngModel)]="persona.imgPersona" required />
+        </label>
+        <label for="telPersona">Teléfono
+            <input type="tel" id="telPersona" name="telPersona" placeholder="1120303456" [(ngModel)]="persona.telPersona"
+                required />
+        </label>
+        <label for="emailPersona">Email
+            <input type="email" id="emailPersona" name="emailPersona" placeholder="mail@ejemplo.com"
+                [(ngModel)]="persona.emailPersona" required />
+        </label>
+        <label for="githubPersona">Github
+            <input type="url" id="githubPersona" name="githubPersona" placeholder="Carga la URL" [(ngModel)]="persona.githubPersona"
+                required />
+        </label>
+        <label for="linkedinPersona">Linkedin
+            <input type="url" id="linkedinPersona" name="linkedinPersona" placeholder="Carga la URL" [(ngModel)]="persona.linkedinPersona"
+                required />
+        </label>
+        <label for="sobreMi">Descripción de ti
+            <textarea id="sobreMi" name="sobreMi" placeholder="Ej: Soy una persona proactiva que busca..."
+                [(ngModel)]="persona.sobreMi" required></textarea>
+        </label>
+    </div>
+    <div mat-dialog-actions class="form-container__btn">
+        <button mat-button (click)="onNoClick()">Cancelar</button>
+        <button mat-button cdkFocusInitial class="send-button" type="submit">Actualizar</button>
+    </div>
+</form>

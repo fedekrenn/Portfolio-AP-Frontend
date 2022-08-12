@@ -19,6 +19,10 @@
     display: flex;
 }
 
+.about-me__child{
+    width: 100%;
+}
+
 .location {
     font-size: .9em;
 }
