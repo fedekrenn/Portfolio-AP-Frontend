@@ -7,12 +7,14 @@
         <img [src]="oneProy.imgProyecto" [alt]="oneProy.nombreProyecto">
         <div class="descripcion-puesto">
             <h3>{{oneProy.nombreProyecto}}</h3>
-            <p class="descripcion-puesto__url">
-                <a [href]="oneProy.urlRepo" target="_blank">Repositorio</a>
-                -
-                <a [href]="oneProy.urlDeploy" target="_blank">Deploy</a>
-            </p>
-            <p>{{oneProy.descripcionProyecto}}</p>
+            <div>
+                <p class="descripcion-puesto__url">
+                    <a [href]="oneProy.urlRepo" target="_blank">Repositorio</a>
+                    -
+                    <a [href]="oneProy.urlDeploy" target="_blank">Deploy</a>
+                </p>
+                <p>{{oneProy.descripcionProyecto}}</p>
+            </div>
         </div>
         <div class="iconos-edicion">
             <i class="fa-solid fa-pen" *ngIf="isLogged" (click)="openDialog2(oneProy.id)"></i>

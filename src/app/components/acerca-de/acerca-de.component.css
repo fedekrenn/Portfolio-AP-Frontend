@@ -6,12 +6,12 @@
     width: 200px;
     border-radius: 50%;
     position: absolute;
-    top: -200px;
+    top: -220px;
     left: 20px;
 }
 
 .descripcion__info {
-    margin: 100px 20px 20px 20px;
+    margin: 120px 20px 20px 20px;
 }
 
 .about-me {
@@ -23,8 +23,30 @@
     width: 100%;
 }
 
-.location {
-    font-size: .9em;
+h2, h3, p{
+    margin: 0;
+    font-family: raleway, sans-serif;
+}
+
+h2{
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+h3{
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+h3.location {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+p{
+    margin: 0;
+    font-family: poppins, sans-serif;
+    font-size: 1.2em;
 }
 
 @media (max-width: 750px) {

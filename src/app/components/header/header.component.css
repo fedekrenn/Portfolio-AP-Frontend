@@ -6,6 +6,15 @@ header {
   background-size: cover;
 }
 
+h1 {
+  font: 700 4em / 80px Raleway, sans-serif;
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -22,6 +31,7 @@ ul {
 ul li {
   list-style-type: none;
   margin: 10px;
+  font-size: 1.2em;
   transition: .4s;
 }
 
@@ -42,7 +52,6 @@ i.icono-logueo {
   font-size: 2em;
   margin: 0 10px;
 }
-
 
 /* Responsive */
 
@@ -67,8 +76,6 @@ i.icono-logueo {
   }
 }
 
-
-
 @media (max-width: 450px) {
   header {
     min-height: 50vh;
@@ -76,23 +83,18 @@ i.icono-logueo {
 
   h1 {
     font-size: 2em;
-    ;
   }
 }
 
+@media (max-width: 450px) {
 
-
-@media (max-width: 450px){
-    
-
-  nav{
+  nav {
     justify-content: center;
   }
 
-  .icono-logueo{
+  .icono-logueo {
     position: absolute;
     top: 15px;
     right: 10px;
   }
-
 }

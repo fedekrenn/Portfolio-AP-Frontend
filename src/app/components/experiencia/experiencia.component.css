@@ -1,9 +1,41 @@
 /* Experiencia */
 
+h2{
+    margin: 0;
+    font-size: 24px;
+}
+
+h3{
+    font-size: 1.5em;
+}
+
+h4{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+h5{
+    font-size: 1em;
+    font-weight: bold;
+}
+
+p{
+    font-size: 1.15em;
+}
+
+h3, h4, h5, p{
+    margin: 0;
+}
+
+h2, h3, h4, h5{
+    font-family: raleway, sans-serif;
+    font-weight: bold;
+}
+
 .contenedor {
     margin: 20px;
     padding: 20px;
-    border: 2px solid black;
+    border: 3px solid black;
     border-radius: 20px;
     background-color: #ffffff80;
     box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
@@ -19,7 +51,7 @@
 .contenedor__child {
     display: flex;
     justify-content: space-between;
-    margin: 30px 0;
+    margin: 50px 0;
 }
 
 .contenedor img {
@@ -38,6 +70,10 @@
 .descripcion-puesto__info {
     display: inline;
     margin-right: 20px;
+}
+
+.descripcion-puesto p{
+    margin-top: 1em;
 }
 
 .iconos-edicion {
@@ -59,11 +95,18 @@
     }
 
     .contenedor__child img {
-        width: 150px;
         margin: 20px;
     }
 
     .iconos-edicion {
         margin-top: 10px;
+    }
+
+    .descripcion-puesto{
+        text-align: center;
+    }
+
+    .descripcion-puesto p{
+        margin-top: 1em;
     }
 }
