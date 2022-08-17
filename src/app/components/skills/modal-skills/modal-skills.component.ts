@@ -40,4 +40,8 @@ export class ModalSkillsComponent implements OnInit {
       this.dialogRef.close();
     })
   }
+
+  formatLabel(value: number) {
+    return value + '%';
+  }
 }

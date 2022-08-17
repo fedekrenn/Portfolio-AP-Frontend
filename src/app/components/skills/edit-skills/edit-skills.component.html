@@ -7,7 +7,9 @@
                 [(ngModel)]="skills.nombreSkill" required />
         </label>
         <label for="porcentajeSkill">Nivel de habilidad
-            <input type="range" id="porcentajeSkill" name="porcentajeSkill" step="5" [(ngModel)]="skills.porcentajeSkill" required />
+            <mat-slider thumbLabel [displayWith]="formatLabel" step="5" min="0" max="100" aria-label="units"
+                id="porcentajeSkill" name="porcentajeSkill" step="5" [(ngModel)]="skills.porcentajeSkill" required>
+            </mat-slider>
         </label>
         <label for="colorSkill">Aplica un color a la habilidad
             <input type="color" id="colorSkill" name="colorSkill" [(ngModel)]="skills.colorSkill" required />

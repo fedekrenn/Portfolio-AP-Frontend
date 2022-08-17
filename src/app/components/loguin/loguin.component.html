@@ -5,16 +5,19 @@
 
     <form #f="ngForm" class="form-login__input" (ngSubmit)="onLogin()" novalidate>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="usserName" name="usserName" [(ngModel)]="usserName" required>
-        <label class="mdl-textfield__label" for="usserName">Usuario</label>
+        <mat-form-field appearance="fill">
+          <mat-label>Usuario</mat-label>
+          <input matInput type="text" id="usserName" name="usserName" [(ngModel)]="usserName" required>
+        </mat-form-field>
       </div>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="password" id="password" name="password" [(ngModel)]="password" required>
-        <label class="mdl-textfield__label" for="password">Password</label>
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" id="password" name="password" [(ngModel)]="password" required>
+        </mat-form-field>
       </div>
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit">Login</button>
+      <button mat-raised-button color="accent" type="submit">Login</button>
+      <a mat-button href="/">Volver</a>
     </form>
-
-    <p><a href="/">Volver</a></p>
   </div>
 </div>

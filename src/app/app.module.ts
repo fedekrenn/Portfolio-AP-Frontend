@@ -21,7 +21,10 @@ import { ModalComponent } from './components/experiencia/modal/modal.component';
 import {MatButtonModule} from '@angular/material/button';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { ReactiveFormsModule } from "@angular/forms";
+import {MatSelectModule} from '@angular/material/select';
 import { CommonModule } from "@angular/common";
+import {MatSliderModule} from '@angular/material/slider';
+import {MatInputModule} from '@angular/material/input';
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia/edit-experiencia.component';
 import { ModalEducacionComponent } from './components/educacion/modal-educacion/modal-educacion.component';
 import { EditEducacionComponent } from './components/educacion/edit-educacion/edit-educacion.component';
@@ -64,7 +67,10 @@ import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de/edi
     MatButtonModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    MatInputModule,
+    MatSelectModule,
+    MatSliderModule
   ],
   providers: [
     interceptorProvider

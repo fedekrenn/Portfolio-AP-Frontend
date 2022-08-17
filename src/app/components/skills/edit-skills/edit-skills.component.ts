@@ -42,4 +42,8 @@ export class EditSkillsComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
+
+  formatLabel(value: number) {
+    return value + '%';
+  }
 }
