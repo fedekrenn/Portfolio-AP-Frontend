@@ -26,7 +26,7 @@ export class EditSkillsComponent implements OnInit {
     this.sSkills.detail(this.data.id).subscribe(data => {
       this.skills = data;
     }, error => {
-      this._snackBar.open(`Error al cargar skills: ${error.error.mensaje}`, 'Cerrar', {
+      this._snackBar.open(`Error al cargar skill: ${error.error.mensaje}`, 'Cerrar', {
         duration: 2000,
         verticalPosition: 'bottom'
       })
@@ -36,7 +36,7 @@ export class EditSkillsComponent implements OnInit {
   onUpdate(id: any): void {
     this.sSkills.update(id, this.skills).subscribe(data => {
       this.dialogRef.close();
-      this._snackBar.open(`Skills actualizados correctamente`, 'Cerrar', {
+      this._snackBar.open(`Skills actualizado correctamente`, 'Cerrar', {
         duration: 2000,
         verticalPosition: 'bottom'
       })
@@ -46,7 +46,7 @@ export class EditSkillsComponent implements OnInit {
       }, 2000);
 
     }, error => {
-      this._snackBar.open(`Error al actualizar skills: ${error.error.mensaje}`, 'Cerrar', {
+      this._snackBar.open(`Error al actualizar skill: ${error.error.mensaje}`, 'Cerrar', {
         duration: 2000,
         verticalPosition: 'bottom'
       })

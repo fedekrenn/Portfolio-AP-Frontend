@@ -64,7 +64,7 @@ h2, h3, h4, h5{
 
 .descripcion-puesto {
     margin: 0 20px;
-    width: 100%;
+    width: 85%;
 }
 
 .descripcion-puesto__info {
@@ -104,6 +104,7 @@ h2, h3, h4, h5{
 
     .descripcion-puesto{
         text-align: center;
+        width: 70%;
     }
 
     .descripcion-puesto p{

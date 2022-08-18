@@ -74,6 +74,10 @@ i.icono-logueo {
   h2 {
     font-size: 1.6em;
   }
+
+  ul li:hover {
+    transform: none;
+  }
 }
 
 @media (max-width: 450px) {

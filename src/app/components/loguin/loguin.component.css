@@ -10,13 +10,17 @@
     align-items: center;
     justify-content: space-evenly;
     width: 500px;
-    height: 80vh;
+    height: 500px;
     margin: auto;
     padding: 2em;
     color: black !important;
     background-color: #ffffff;
     border-radius: 1em;
     box-shadow: 5px 5px 21px 0px rgba(0, 0, 0, 0.75);
+}
+
+.form-login p{
+    text-align: center;
 }
 
 .form-login__input{
@@ -40,4 +44,10 @@
 
 a {
     color: inherit;
+}
+
+@media (max-width: 550px) {
+    .form-login {
+        width: 85%;
+    }
 }

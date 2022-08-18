@@ -4,7 +4,7 @@ import { ExperienciaService } from 'src/app/service/experiencia.service';
 import { TokenService } from 'src/app/service/token.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ModalComponent } from './modal/modal.component';
+import { ModalComponent } from './modal-experiencia/modal-experiencia.component';
 import { EditExperienciaComponent } from './edit-experiencia/edit-experiencia.component';
 
 @Component({

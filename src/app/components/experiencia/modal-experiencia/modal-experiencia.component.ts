@@ -6,8 +6,8 @@ import { ExperienciaService } from 'src/app/service/experiencia.service';
 
 @Component({
   selector: 'app-modal',
-  templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css']
+  templateUrl: './modal-experiencia.component.html',
+  styleUrls: ['./modal-experiencia.component.css']
 })
 
 export class ModalComponent implements OnInit {

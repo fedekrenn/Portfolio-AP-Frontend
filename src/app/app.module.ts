@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { interceptorProvider } from './service/interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ModalComponent } from './components/experiencia/modal/modal.component';
+import { ModalComponent } from './components/experiencia/modal-experiencia/modal-experiencia.component';
 import {MatButtonModule} from '@angular/material/button';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { ReactiveFormsModule } from "@angular/forms";

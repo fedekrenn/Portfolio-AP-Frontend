@@ -24,7 +24,7 @@ export class EditProyectosComponent implements OnInit {
     this.sProyectos.detail(this.data.id).subscribe(data => {
       this.proyectos = data;
     }, error => {
-      this.snackbar.open(`Error al cargar proyectos: ${error.error.mensaje}`, 'Cerrar', {
+      this.snackbar.open(`Error al cargar el proyecto: ${error.error.mensaje}`, 'Cerrar', {
         duration: 2000,
         verticalPosition: 'bottom'
       });

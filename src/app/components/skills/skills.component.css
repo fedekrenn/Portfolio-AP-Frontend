@@ -2,6 +2,11 @@
 
 /* Skills */
 
+circle-progress{
+  display: flex;
+  justify-content: center
+}
+
 .skills {
   margin: 30px 0;
   display: flex;
