@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Experiencia } from 'src/app/model/experiencia';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
 
@@ -10,7 +11,7 @@ import { ExperienciaService } from 'src/app/service/experiencia.service';
 })
 
 export class ModalComponent implements OnInit {
-  
+
   nombreExperiencia: string = '';
   descripcionExperiencia: string = '';
   compania: string = '';
@@ -21,9 +22,9 @@ export class ModalComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<ModalComponent>,
     private sExperiencia: ExperienciaService,
+    private snackbar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
-
 
   ngOnInit(): void {
   }
@@ -35,12 +36,21 @@ export class ModalComponent implements OnInit {
   onCreate(): void {
     const expe = new Experiencia(this.nombreExperiencia, this.descripcionExperiencia, this.compania, this.imgExp, this.startExp, this.endExp);
     this.sExperiencia.save(expe).subscribe(data => {
-      alert('Experiencia creada');
       this.dialogRef.close();
-      window.location.reload();
+      this.snackbar.open('Experiencia creada', 'Cerrar', {
+        duration: 2000,
+        verticalPosition: 'bottom'
+      });
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+
     }, error => {
-      alert('Error al crear experiencia');
-      this.dialogRef.close();
+      this.snackbar.open(`Error al crear experiencia: ${error.error.mensaje}`, 'Cerrar', {
+        duration: 2000,
+        verticalPosition: 'bottom'
+      });
     })
   }
 }

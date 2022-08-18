@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
 import { TokenService } from 'src/app/service/token.service';
@@ -19,13 +20,13 @@ export class EducacionComponent implements OnInit {
   constructor(
     private sEducacion: EducacionService,
     private tokenService: TokenService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private snackbar: MatSnackBar
   ) { }
 
   isLogged = false;
 
   ngOnInit(): void {
-
     this.cargarEducacion();
     this.tokenService.getToken() ? this.isLogged = true : this.isLogged = false;
   }
@@ -39,10 +40,18 @@ export class EducacionComponent implements OnInit {
   delete(id: any): void {
     if (id != undefined) {
       this.sEducacion.delete(id).subscribe(data => {
-        alert('Educacion eliminada');
         this.cargarEducacion();
+
+        this.snackbar.open('Educacion eliminada', 'Cerrar', {
+          duration: 2000,
+          verticalPosition: 'bottom'
+        });
+
       }, error => {
-        alert('Error al eliminar educacion');
+        this.snackbar.open(`Error al eliminar educacion: ${error.error.mensaje}`, 'Cerrar', {
+          duration: 2000,
+          verticalPosition: 'bottom'
+        });
       });
     }
   }
@@ -59,6 +68,5 @@ export class EducacionComponent implements OnInit {
       width: '500px',
       data: { id: id }
     });
-    console.log(id)
   }
 }

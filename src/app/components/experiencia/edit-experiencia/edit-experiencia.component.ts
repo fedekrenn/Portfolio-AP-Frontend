@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Experiencia } from 'src/app/model/experiencia';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
 
@@ -15,26 +16,38 @@ export class EditExperienciaComponent implements OnInit {
   constructor(
     private sExperiencia: ExperienciaService,
     public dialogRef: MatDialogRef<EditExperienciaComponent>,
+    private snackbar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
-
 
   ngOnInit(): void {
     this.sExperiencia.detail(this.data.id).subscribe(data => {
       this.expLab = data;
     }, error => {
-      alert('Error al actualizar experiencia');
-      window.location.reload();
+      this.snackbar.open(`Error al cargar experiencia: ${error.error.mensaje}`, 'Cerrar', {
+        duration: 2000,
+        verticalPosition: 'bottom'
+      });
     })
   }
 
   onUpdate(id: any): void {
     this.sExperiencia.update(id, this.expLab).subscribe(data => {
-      alert('Experiencia actualizada');
-      window.location.reload();
+      this.dialogRef.close();
+      this.snackbar.open('Experiencia actualizada', 'Cerrar', {
+        duration: 2000,
+        verticalPosition: 'bottom'
+      });
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+
     }, error => {
-      alert('Error al actualizar experiencia');
-      window.location.reload();
+      this.snackbar.open( `Error al actualizar experiencia: ${error.error.mensaje}`, 'Cerrar', {
+        duration: 2000,
+        verticalPosition: 'bottom'
+      });
     })
   }
 

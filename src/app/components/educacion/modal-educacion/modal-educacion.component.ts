@@ -2,13 +2,14 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-modal-educacion',
   templateUrl: './modal-educacion.component.html',
   styleUrls: ['./modal-educacion.component.css']
 })
+
 export class ModalEducacionComponent implements OnInit {
 
   nombreEducacion: string = '';
@@ -21,26 +22,35 @@ export class ModalEducacionComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<ModalEducacionComponent>,
     private sEducacion: EducacionService,
+    private snackbar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
-
   ngOnInit(): void {
-  }
-
-  onNoClick(): void {
-    this.dialogRef.close();
   }
 
   onCreate(): void {
     const educacion = new Educacion(this.nombreEducacion, this.descripcionEducacion, this.establecimiento, this.imgEducacion, this.startEducacion, this.endEducacion);
     this.sEducacion.save(educacion).subscribe(data => {
-      alert('Educacion creada');
       this.dialogRef.close();
-      window.location.reload();
+      this.snackbar.open('Educacion creada', 'Cerrar', {
+        duration: 2000,
+        verticalPosition: 'bottom'
+      });
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+
     }, error => {
-      alert('Error al crear educacion');
-      this.dialogRef.close();
+      this.snackbar.open(`Error al crear educacion: ${error.error.mensaje}`, 'Cerrar', {
+        duration: 2000,
+        verticalPosition: 'bottom'
+      });
     })
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }

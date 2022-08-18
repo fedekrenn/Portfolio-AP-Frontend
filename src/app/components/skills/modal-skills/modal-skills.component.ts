@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Skills } from 'src/app/model/skills';
 import { SkillsService } from 'src/app/service/skills.service';
 
@@ -18,9 +19,9 @@ export class ModalSkillsComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<ModalSkillsComponent>,
     private sSkills: SkillsService,
+    private snackBar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
-
 
   ngOnInit(): void {
   }
@@ -32,12 +33,21 @@ export class ModalSkillsComponent implements OnInit {
   onCreate(): void {
     const skill = new Skills(this.nombreSkill, this.porcentajeSkill, this.colorSkill);
     this.sSkills.save(skill).subscribe(data => {
-      alert('Skill añadido!');
       this.dialogRef.close();
-      window.location.reload();
+      this.snackBar.open(`Skill creado correctamente`, 'Cerrar', {
+        duration: 2000,
+        verticalPosition: 'bottom'
+      })
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+
     }, error => {
-      alert('Error al crear skill');
-      this.dialogRef.close();
+      this.snackBar.open(`Error al crear skill: ${error.error.mensaje}`, 'Cerrar', {
+        duration: 2000,
+        verticalPosition: 'bottom'
+      })
     })
   }
 

@@ -33,6 +33,7 @@ import { ModalProyectosComponent } from './components/proyectos/modal-proyectos/
 import { ModalSkillsComponent } from './components/skills/modal-skills/modal-skills.component';
 import { EditSkillsComponent } from './components/skills/edit-skills/edit-skills.component';
 import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de/edit-acerca-de.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de/edi
     CommonModule,
     MatInputModule,
     MatSelectModule,
-    MatSliderModule
+    MatSliderModule,
+    MatSnackBarModule
   ],
   providers: [
     interceptorProvider

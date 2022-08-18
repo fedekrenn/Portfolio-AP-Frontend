@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Proyectos } from 'src/app/model/proyectos';
 import { TokenService } from 'src/app/service/token.service';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProyectosService } from 'src/app/service/proyectos.service';
 import { ModalProyectosComponent } from './modal-proyectos/modal-proyectos.component';
 import { EditProyectosComponent } from './edit-proyectos/edit-proyectos.component';
@@ -16,16 +17,14 @@ export class ProyectosComponent implements OnInit {
 
   proyectos: Proyectos[] = [];
 
-  miPortfolio:any;
-
   constructor(
     private sProyectos: ProyectosService,
     private tokenService: TokenService,
-    public dialog: MatDialog
-    ) { }
+    public dialog: MatDialog,
+    private _snackBar: MatSnackBar
+  ) { }
 
-
-    isLogged = false;
+  isLogged = false;
 
   ngOnInit(): void {
     this.cargarProyectos();
@@ -41,10 +40,18 @@ export class ProyectosComponent implements OnInit {
   delete(id: any): void {
     if (id != undefined) {
       this.sProyectos.delete(id).subscribe(data => {
-        alert('Proyecto eliminado');
         this.cargarProyectos();
+
+        this._snackBar.open('Proyecto eliminado', 'Cerrar', {
+          duration: 2000,
+          verticalPosition: 'bottom'
+        });
+
       }, error => {
-        alert('Error al eliminar proyecto');
+        this._snackBar.open(`Error al eliminar proyecto: ${error.error.mensaje}`, 'Cerrar', {
+          duration: 2000,
+          verticalPosition: 'bottom'
+        });
       });
     }
   }
@@ -61,6 +68,5 @@ export class ProyectosComponent implements OnInit {
       width: '500px',
       data: { id: id }
     });
-    console.log(id)
   }
 }

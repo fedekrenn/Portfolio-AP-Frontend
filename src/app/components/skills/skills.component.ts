@@ -3,6 +3,7 @@ import { Skills } from 'src/app/model/skills';
 import { SkillsService } from 'src/app/service/skills.service';
 import { TokenService } from 'src/app/service/token.service';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ModalSkillsComponent } from './modal-skills/modal-skills.component';
 import { EditSkillsComponent } from './edit-skills/edit-skills.component';
 
@@ -18,13 +19,11 @@ export class SkillsComponent implements OnInit {
   constructor(
     private sSkills: SkillsService,
     private tokenService: TokenService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private _snackBar: MatSnackBar
   ) { }
 
   isLogged = false;
-
-
-
 
   ngOnInit(): void {
     this.cargarSkills();
@@ -40,10 +39,18 @@ export class SkillsComponent implements OnInit {
   delete(id: any): void {
     if (id != undefined) {
       this.sSkills.delete(id).subscribe(data => {
-        alert('Skill eliminado');
         this.cargarSkills();
+
+        this._snackBar.open('Skill eliminado', 'Cerrar', {
+          duration: 2000,
+          verticalPosition: 'bottom'
+        });
+        
       }, error => {
-        alert('Error al eliminar skill');
+        this._snackBar.open(`Error al eliminar skill: ${error.error.mensaje}`, 'Cerrar', {
+          duration: 2000,
+          verticalPosition: 'bottom'
+        });
       });
     }
   }
