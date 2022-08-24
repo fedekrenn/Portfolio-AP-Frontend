@@ -9,7 +9,7 @@ import { Skills } from '../model/skills';
 })
 export class SkillsService {
 
-  skillsUrl = 'http://localhost:8080/skills/';
+  skillsUrl = 'https://backkrenn.herokuapp.com/skills/';
 
   constructor(private httpClient: HttpClient) { }
 
