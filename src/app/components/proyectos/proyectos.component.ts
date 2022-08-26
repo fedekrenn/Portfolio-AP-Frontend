@@ -61,12 +61,20 @@ export class ProyectosComponent implements OnInit {
       width: '500px',
       data: 'rigth click'
     });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.cargarProyectos();
+    });
   }
 
   openDialog2(id: any): void {
     const dialogRef = this.dialog.open(EditProyectosComponent, {
       width: '500px',
       data: { id: id }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.cargarProyectos();
     });
   }
 }

@@ -8,27 +8,27 @@ import { Experiencia } from '../model/experiencia';
 })
 export class ExperienciaService {
 
-  // expUrl = 'https://backkrenn.herokuapp.com/experiencia-laboral/';
-  expUrl = 'http://localhost:8080/experiencia-laboral/';
+  ENDPOINT = 'https://backkrenn.herokuapp.com/experiencia-laboral/';
+  
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Experiencia[]> {
-    return this.httpClient.get<Experiencia[]>(this.expUrl + 'lista');
+    return this.httpClient.get<Experiencia[]>(this.ENDPOINT + 'lista');
   }
 
   public detail(id: number): Observable<Experiencia> {
-    return this.httpClient.get<Experiencia>(this.expUrl + `detail/${id}`);
+    return this.httpClient.get<Experiencia>(this.ENDPOINT + `detail/${id}`);
   }
 
   public save(experiencia: Experiencia): Observable<any> {
-    return this.httpClient.post<any>(this.expUrl + 'create', experiencia);
+    return this.httpClient.post<any>(this.ENDPOINT + 'create', experiencia);
   }
 
   public update(id: number, experiencia: Experiencia): Observable<any> {
-    return this.httpClient.put<any>(this.expUrl + `update/${id}`, experiencia);
+    return this.httpClient.put<any>(this.ENDPOINT + `update/${id}`, experiencia);
   }
 
   public delete(id: number): Observable<any> {
-    return this.httpClient.delete<any>(this.expUrl + `delete/${id}`);
+    return this.httpClient.delete<any>(this.ENDPOINT + `delete/${id}`);
   }
 }

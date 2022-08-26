@@ -29,10 +29,6 @@ export class ModalComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
   onCreate(): void {
     const expe = new Experiencia(this.nombreExperiencia, this.descripcionExperiencia, this.compania, this.imgExp, this.startExp, this.endExp);
     this.service.save(expe).subscribe(data => {
@@ -41,16 +37,15 @@ export class ModalComponent implements OnInit {
         duration: 2000,
         verticalPosition: 'bottom'
       });
-
-      setTimeout(() => {
-        window.location.reload();
-      }, 2000);
-
     }, error => {
       this.snackbar.open(`Error al crear experiencia: ${error.error.mensaje}`, 'Cerrar', {
         duration: 2000,
         verticalPosition: 'bottom'
       });
     })
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }

@@ -41,5 +41,12 @@ export class AcercaDeComponent implements OnInit {
       width: '500px',
       data: this.persona
     });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.service.getPersona().subscribe(data => {
+        this.persona = data
+        this.tokenService.getToken() ? this.isLogged = true : this.isLogged = false;
+      })
+    });
   }
 }

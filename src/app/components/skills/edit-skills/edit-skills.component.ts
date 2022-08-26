@@ -40,11 +40,6 @@ export class EditSkillsComponent implements OnInit {
         duration: 2000,
         verticalPosition: 'bottom'
       })
-
-      setTimeout(() => {
-        window.location.reload();
-      }, 2000);
-
     }, error => {
       this._snackBar.open(`Error al actualizar skill: ${error.error.mensaje}`, 'Cerrar', {
         duration: 2000,

@@ -38,11 +38,6 @@ export class EditProyectosComponent implements OnInit {
         duration: 2000,
         verticalPosition: 'bottom'
       });
-
-      setTimeout(() => {
-        window.location.reload();
-      }, 2000);
-
     }, error => {
       this.snackbar.open(`Error al actualizar proyecto: ${error.error.mensaje}`, 'Cerrar', {
         duration: 2000,

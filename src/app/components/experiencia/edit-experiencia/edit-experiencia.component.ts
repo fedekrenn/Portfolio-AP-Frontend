@@ -38,13 +38,8 @@ export class EditExperienciaComponent implements OnInit {
         duration: 2000,
         verticalPosition: 'bottom'
       });
-
-      setTimeout(() => {
-        window.location.reload();
-      }, 2000);
-
     }, error => {
-      this.snackbar.open( `Error al actualizar experiencia: ${error.error.mensaje}`, 'Cerrar', {
+      this.snackbar.open(`Error al actualizar experiencia: ${error.error.mensaje}`, 'Cerrar', {
         duration: 2000,
         verticalPosition: 'bottom'
       });

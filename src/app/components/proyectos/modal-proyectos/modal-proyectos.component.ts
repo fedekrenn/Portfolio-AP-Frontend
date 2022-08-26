@@ -27,10 +27,6 @@ export class ModalProyectosComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
   onCreate(): void {
     const proyectos = new Proyecto(this.nombreProyecto, this.urlRepo, this.urlDeploy, this.imgProyecto, this.descripcionProyecto);
     this.service.save(proyectos).subscribe(data => {
@@ -39,16 +35,15 @@ export class ModalProyectosComponent implements OnInit {
         duration: 2000,
         verticalPosition: 'bottom'
       });
-
-      setTimeout(() => {
-        window.location.reload();
-      }, 2000);
-
     }, error => {
       this.snackbar.open(`Error al crear proyecto: ${error.error.mensaje}`, 'Cerrar', {
         duration: 2000,
         verticalPosition: 'bottom'
       });
     })
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }

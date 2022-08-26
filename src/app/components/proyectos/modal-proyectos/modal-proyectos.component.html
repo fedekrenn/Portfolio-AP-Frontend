@@ -1,4 +1,4 @@
-<form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+<form novalidate #f="ngForm">
     <h2 mat-dialog-title>Cargar nuevo proyecto</h2>
     <div class="form-container">
 
@@ -27,6 +27,6 @@
     </div>
     <div mat-dialog-actions class="form-container__btn">
         <button mat-button (click)="onNoClick()">Cancelar</button>
-        <button mat-button cdkFocusInitial class="send-button" type="submit">Enviar</button>
+        <button mat-button cdkFocusInitial class="send-button" (click)="onCreate()">Enviar</button>
     </div>
 </form>

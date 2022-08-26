@@ -26,10 +26,6 @@ export class ModalSkillsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
   onCreate(): void {
     const skill = new Skill(this.nombreSkill, this.porcentajeSkill, this.colorSkill);
     this.service.save(skill).subscribe(data => {
@@ -38,17 +34,16 @@ export class ModalSkillsComponent implements OnInit {
         duration: 2000,
         verticalPosition: 'bottom'
       })
-
-      setTimeout(() => {
-        window.location.reload();
-      }, 2000);
-
     }, error => {
       this.snackBar.open(`Error al crear skill: ${error.error.mensaje}`, 'Cerrar', {
         duration: 2000,
         verticalPosition: 'bottom'
       })
     })
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
   formatLabel(value: number) {

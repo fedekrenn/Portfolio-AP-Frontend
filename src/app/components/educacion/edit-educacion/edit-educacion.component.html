@@ -1,4 +1,4 @@
-educacion<form (ngSubmit)="onUpdate(data.id)" novalidate #f="ngForm">
+<form novalidate #f="ngForm">
     <h2 mat-dialog-title>Modificar la educación</h2>
     <div class="form-container">
         <label for="nombreEducacion">Carrera
@@ -23,6 +23,6 @@ educacion<form (ngSubmit)="onUpdate(data.id)" novalidate #f="ngForm">
     </div>
     <div mat-dialog-actions class="form-container__btn">
         <button mat-button (click)="onNoClick()">Cancelar</button>
-        <button mat-button cdkFocusInitial class="send-button" type="submit">Actualizar</button>
+        <button mat-button cdkFocusInitial class="send-button" (click)="onUpdate(data.id)">Actualizar</button>
     </div>
 </form>

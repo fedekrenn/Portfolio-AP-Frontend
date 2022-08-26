@@ -46,7 +46,7 @@ export class ExperienciaComponent implements OnInit {
           duration: 2000,
           verticalPosition: 'bottom'
         });
-        
+
       }, error => {
         this.snackbar.open(`Error al eliminar experiencia: ${error.error.mensaje}`, 'Cerrar', {
           duration: 2000,
@@ -61,12 +61,20 @@ export class ExperienciaComponent implements OnInit {
       width: '500px',
       data: 'rigth click'
     });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.cargarExperiencia();
+    });
   }
 
   openDialog2(id: any): void {
     const dialogRef = this.dialog.open(EditExperienciaComponent, {
       width: '500px',
       data: { id: id }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.cargarExperiencia();
     });
   }
 }

@@ -60,6 +60,10 @@ export class SkillsComponent implements OnInit {
       width: '500px',
       data: 'rigth click'
     });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.cargarSkills();
+    });
   }
 
   openDialog2(id: any): void {
@@ -67,6 +71,9 @@ export class SkillsComponent implements OnInit {
       width: '500px',
       data: { id: id }
     });
-    console.log(id)
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.cargarSkills();
+    });
   }
 }

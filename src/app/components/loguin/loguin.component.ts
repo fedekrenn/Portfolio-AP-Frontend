@@ -10,7 +10,6 @@ import { TokenService } from 'src/app/service/token.service';
   styleUrls: ['./loguin.component.css']
 })
 
-
 export class LoguinComponent implements OnInit {
 
   isLogged = false;
