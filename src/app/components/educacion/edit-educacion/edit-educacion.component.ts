@@ -12,18 +12,18 @@ import { EducacionService } from 'src/app/service/educacion.service';
 
 export class EditEducacionComponent implements OnInit {
 
-  eduEdu!: Educacion;
+  educacion: Educacion = new Educacion("", "", "", "", 0, "");
 
   constructor(
-    private sEducacion: EducacionService,
+    private service: EducacionService,
     public dialogRef: MatDialogRef<EditEducacionComponent>,
     private snackbar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
   ngOnInit(): void {
-    this.sEducacion.detail(this.data.id).subscribe(data => {
-      this.eduEdu = data;
+    this.service.detail(this.data.id).subscribe(data => {
+      this.educacion = data;
     }, error => {
       this.snackbar.open(`Error al cargar educacion: ${error.error.mensaje}`, 'Cerrar', {
         duration: 2000,
@@ -33,7 +33,7 @@ export class EditEducacionComponent implements OnInit {
   }
 
   onUpdate(id: any): void {
-    this.sEducacion.update(id, this.eduEdu).subscribe(data => {
+    this.service.update(id, this.educacion).subscribe(data => {
       this.dialogRef.close();
       this.snackbar.open('Educacion actualizada', 'Cerrar', {
         duration: 2000,

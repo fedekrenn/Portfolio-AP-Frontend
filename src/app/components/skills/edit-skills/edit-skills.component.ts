@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Skills } from 'src/app/model/skills';
+import { Skill } from 'src/app/model/skills';
 import { SkillsService } from 'src/app/service/skills.service';
 
 @Component({
@@ -12,10 +12,10 @@ import { SkillsService } from 'src/app/service/skills.service';
 
 export class EditSkillsComponent implements OnInit {
 
-  skills!: Skills;
+  skills: Skill = new Skill("", 0, "");
 
   constructor(
-    private sSkills: SkillsService,
+    private service: SkillsService,
     public dialogRef: MatDialogRef<EditSkillsComponent>,
     private _snackBar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: any
@@ -23,7 +23,7 @@ export class EditSkillsComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.sSkills.detail(this.data.id).subscribe(data => {
+    this.service.detail(this.data.id).subscribe(data => {
       this.skills = data;
     }, error => {
       this._snackBar.open(`Error al cargar skill: ${error.error.mensaje}`, 'Cerrar', {
@@ -34,7 +34,7 @@ export class EditSkillsComponent implements OnInit {
   }
 
   onUpdate(id: any): void {
-    this.sSkills.update(id, this.skills).subscribe(data => {
+    this.service.update(id, this.skills).subscribe(data => {
       this.dialogRef.close();
       this._snackBar.open(`Skills actualizado correctamente`, 'Cerrar', {
         duration: 2000,

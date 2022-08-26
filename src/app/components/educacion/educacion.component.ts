@@ -15,10 +15,10 @@ import { ModalEducacionComponent } from './modal-educacion/modal-educacion.compo
 
 export class EducacionComponent implements OnInit {
 
-  educacion: Educacion[] = [];
+  educaciones: Educacion[];
 
   constructor(
-    private sEducacion: EducacionService,
+    private service: EducacionService,
     private tokenService: TokenService,
     public dialog: MatDialog,
     private snackbar: MatSnackBar
@@ -32,14 +32,14 @@ export class EducacionComponent implements OnInit {
   }
 
   cargarEducacion(): void {
-    this.sEducacion.lista().subscribe(data => {
-      this.educacion = data;
+    this.service.lista().subscribe(data => {
+      this.educaciones = data;
     });
   }
 
   delete(id: any): void {
     if (id != undefined) {
-      this.sEducacion.delete(id).subscribe(data => {
+      this.service.delete(id).subscribe(data => {
         this.cargarEducacion();
 
         this.snackbar.open('Educacion eliminada', 'Cerrar', {

@@ -15,10 +15,10 @@ import { EditExperienciaComponent } from './edit-experiencia/edit-experiencia.co
 
 export class ExperienciaComponent implements OnInit {
 
-  experiencia: Experiencia[] = [];
+  experiencias: Experiencia[];
 
   constructor(
-    private sExperiencia: ExperienciaService,
+    private service: ExperienciaService,
     private tokenService: TokenService,
     public dialog: MatDialog,
     private snackbar: MatSnackBar
@@ -32,14 +32,14 @@ export class ExperienciaComponent implements OnInit {
   }
 
   cargarExperiencia(): void {
-    this.sExperiencia.lista().subscribe(data => {
-      this.experiencia = data;
+    this.service.lista().subscribe(data => {
+      this.experiencias = data;
     });
   }
 
   delete(id: any): void {
     if (id != undefined) {
-      this.sExperiencia.delete(id).subscribe(data => {
+      this.service.delete(id).subscribe(data => {
         this.cargarExperiencia();
 
         this.snackbar.open('Experiencia eliminada', 'Cerrar', {

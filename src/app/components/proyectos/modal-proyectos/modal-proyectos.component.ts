@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Proyectos } from 'src/app/model/proyectos';
+import { Proyecto } from 'src/app/model/proyectos';
 import { ProyectosService } from 'src/app/service/proyectos.service';
 
 @Component({
@@ -19,7 +19,7 @@ export class ModalProyectosComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<ModalProyectosComponent>,
-    private sProyectos: ProyectosService,
+    private service: ProyectosService,
     private snackbar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
@@ -32,8 +32,8 @@ export class ModalProyectosComponent implements OnInit {
   }
 
   onCreate(): void {
-    const proyectos = new Proyectos(this.nombreProyecto, this.urlRepo, this.urlDeploy, this.imgProyecto, this.descripcionProyecto);
-    this.sProyectos.save(proyectos).subscribe(data => {
+    const proyectos = new Proyecto(this.nombreProyecto, this.urlRepo, this.urlDeploy, this.imgProyecto, this.descripcionProyecto);
+    this.service.save(proyectos).subscribe(data => {
       this.dialogRef.close();
       this.snackbar.open('Proyecto creado', 'Cerrar', {
         duration: 2000,

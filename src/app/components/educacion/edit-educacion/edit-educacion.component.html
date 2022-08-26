@@ -1,24 +1,24 @@
-<form (ngSubmit)="onUpdate(data.id)" novalidate #f="ngForm">
+educacion<form (ngSubmit)="onUpdate(data.id)" novalidate #f="ngForm">
     <h2 mat-dialog-title>Modificar la educación</h2>
     <div class="form-container">
         <label for="nombreEducacion">Carrera
-            <input type="text" id="nombreEducacion" name="nombreEducacion" placeholder="Ej: Ing. Sistemas" [(ngModel)]="eduEdu.nombreEducacion" required/>
+            <input type="text" id="nombreEducacion" name="nombreEducacion" placeholder="Ej: Ing. Sistemas" [(ngModel)]="educacion.nombreEducacion" required/>
         </label>
         <label for="establecimiento">Nombre de la institución
-            <input type="text" id="establecimiento" name="establecimiento" placeholder="Ej: Universidad Nacional de Córdoba" [(ngModel)]="eduEdu.establecimiento" required/>
+            <input type="text" id="establecimiento" name="establecimiento" placeholder="Ej: Universidad Nacional de Córdoba" [(ngModel)]="educacion.establecimiento" required/>
         </label>
         <label for="startEducacion">Fecha de inicio
-            <input type="number" id="startEducacion" name="startEducacion" placeholder="Sólo el año" [(ngModel)]="eduEdu.startEducacion" required/>
+            <input type="number" id="startEducacion" name="startEducacion" placeholder="Sólo el año" [(ngModel)]="educacion.startEducacion" required/>
         </label>
         <label for="endEducacion">Fecha de fin
-            <input type="text" id="endEducacion" name="endEducacion" placeholder="Año o 'Actualidad'" [(ngModel)]="eduEdu.endEducacion" required/>
+            <input type="text" id="endEducacion" name="endEducacion" placeholder="Año o 'Actualidad'" [(ngModel)]="educacion.endEducacion" required/>
         </label>
         <label for="imgEducacion">Imagen
-            <input type="url" id="imgEducacion" name="imgEducacion" placeholder="Carga la URL" [(ngModel)]="eduEdu.imgEducacion" required/>
+            <input type="url" id="imgEducacion" name="imgEducacion" placeholder="Carga la URL" [(ngModel)]="educacion.imgEducacion" required/>
         </label>
         <label for="descripcionEducacion">Descripción del estudio
             <textarea id="descripcionEducacion" name="descripcionEducacion"
-                placeholder="Ej: Desarrollé una app para Google" maxlength="1000" [(ngModel)]="eduEdu.descripcionEducacion" required></textarea>
+                placeholder="Ej: Desarrollé una app para Google" maxlength="1000" [(ngModel)]="educacion.descripcionEducacion" required></textarea>
         </label>
     </div>
     <div mat-dialog-actions class="form-container__btn">

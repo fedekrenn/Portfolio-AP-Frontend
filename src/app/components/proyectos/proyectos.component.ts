@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Proyectos } from 'src/app/model/proyectos';
+import { Proyecto } from 'src/app/model/proyectos';
 import { TokenService } from 'src/app/service/token.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -15,10 +15,10 @@ import { EditProyectosComponent } from './edit-proyectos/edit-proyectos.componen
 
 export class ProyectosComponent implements OnInit {
 
-  proyectos: Proyectos[] = [];
+  proyectos: Proyecto[];
 
   constructor(
-    private sProyectos: ProyectosService,
+    private service: ProyectosService,
     private tokenService: TokenService,
     public dialog: MatDialog,
     private _snackBar: MatSnackBar
@@ -32,14 +32,14 @@ export class ProyectosComponent implements OnInit {
   }
 
   cargarProyectos(): void {
-    this.sProyectos.lista().subscribe(data => {
+    this.service.lista().subscribe(data => {
       this.proyectos = data;
     });
   }
 
   delete(id: any): void {
     if (id != undefined) {
-      this.sProyectos.delete(id).subscribe(data => {
+      this.service.delete(id).subscribe(data => {
         this.cargarProyectos();
 
         this._snackBar.open('Proyecto eliminado', 'Cerrar', {

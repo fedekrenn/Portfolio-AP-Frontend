@@ -3,17 +3,17 @@
         <h2>Experiencia</h2>
         <i class="fa-solid fa-plus" mat-button (click)="openDialog()" *ngIf="isLogged"></i>
     </div>
-    <div class="contenedor__child" *ngFor="let oneExp of experiencia">
-        <img [src]="oneExp.imgExp" [alt]="oneExp.nombreExperiencia">
+    <div class="contenedor__child" *ngFor="let experiencia of experiencias">
+        <img [src]="experiencia.imgExp" [alt]="experiencia.nombreExperiencia">
         <div class="descripcion-puesto">
-            <h3>{{oneExp.nombreExperiencia}}</h3>
-            <h4 class="descripcion-puesto__info">{{oneExp.compania}}</h4>
-            <h5 class="descripcion-puesto__info">{{oneExp.startExp}} - {{oneExp.endExp}}</h5>
-            <p>{{oneExp.descripcionExperiencia}}</p>
+            <h3>{{experiencia.nombreExperiencia}}</h3>
+            <h4 class="descripcion-puesto__info">{{experiencia.compania}}</h4>
+            <h5 class="descripcion-puesto__info">{{experiencia.startExp}} - {{experiencia.endExp}}</h5>
+            <p>{{experiencia.descripcionExperiencia}}</p>
         </div>
         <div class="iconos-edicion">
-            <i class="fa-solid fa-pen" *ngIf="isLogged" (click)="openDialog2(oneExp.id)"></i>
-            <i class="fa-solid fa-trash" *ngIf="isLogged" (click)="delete(oneExp.id)"></i>
+            <i class="fa-solid fa-pen" *ngIf="isLogged" (click)="openDialog2(experiencia.id)"></i>
+            <i class="fa-solid fa-trash" *ngIf="isLogged" (click)="delete(experiencia.id)"></i>
         </div>
     </div>
 </section>

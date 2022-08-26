@@ -21,7 +21,7 @@ export class ModalComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<ModalComponent>,
-    private sExperiencia: ExperienciaService,
+    private service: ExperienciaService,
     private snackbar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
@@ -35,7 +35,7 @@ export class ModalComponent implements OnInit {
 
   onCreate(): void {
     const expe = new Experiencia(this.nombreExperiencia, this.descripcionExperiencia, this.compania, this.imgExp, this.startExp, this.endExp);
-    this.sExperiencia.save(expe).subscribe(data => {
+    this.service.save(expe).subscribe(data => {
       this.dialogRef.close();
       this.snackbar.open('Experiencia creada', 'Cerrar', {
         duration: 2000,

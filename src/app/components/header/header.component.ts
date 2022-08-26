@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { persona } from 'src/app/model/persona.model';
+import { Persona } from 'src/app/model/persona.model';
 import { PersonaService } from 'src/app/service/persona.service';
 import { TokenService } from 'src/app/service/token.service';
 
@@ -10,7 +10,7 @@ import { TokenService } from 'src/app/service/token.service';
 })
 export class HeaderComponent implements OnInit {
 
-  persona: persona = new persona("", "", "", "", "", 0, "", "", "");
+  persona: Persona = new Persona("", "", "", "", "", 0, "", "", "");
 
   isLogged: boolean = false;
 

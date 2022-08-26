@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Skills } from 'src/app/model/skills';
+import { Skill } from 'src/app/model/skills';
 import { SkillsService } from 'src/app/service/skills.service';
 import { TokenService } from 'src/app/service/token.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -14,10 +14,10 @@ import { EditSkillsComponent } from './edit-skills/edit-skills.component';
 })
 export class SkillsComponent implements OnInit {
 
-  skills: Skills[] = [];
+  skills: Skill[];
 
   constructor(
-    private sSkills: SkillsService,
+    private service: SkillsService,
     private tokenService: TokenService,
     public dialog: MatDialog,
     private _snackBar: MatSnackBar
@@ -31,14 +31,14 @@ export class SkillsComponent implements OnInit {
   }
 
   cargarSkills(): void {
-    this.sSkills.lista().subscribe(data => {
+    this.service.lista().subscribe(data => {
       this.skills = data;
     });
   }
 
   delete(id: any): void {
     if (id != undefined) {
-      this.sSkills.delete(id).subscribe(data => {
+      this.service.delete(id).subscribe(data => {
         this.cargarSkills();
 
         this._snackBar.open('Skill eliminado', 'Cerrar', {

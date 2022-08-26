@@ -9,8 +9,8 @@ import { Educacion } from '../model/educacion';
 })
 export class EducacionService {
 
-  eduURL = 'https://backkrenn.herokuapp.com/educacion/';
-
+  // eduURL = 'https://backkrenn.herokuapp.com/educacion/';
+  eduURL = 'http://localhost:8080/educacion/'
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Educacion[]> {
@@ -22,14 +22,14 @@ export class EducacionService {
   }
 
   public save(educacion: Educacion): Observable<any> {
-    return this.httpClient.post<any>(this.eduURL + 'create', educacion);
+    return this.httpClient.post(this.eduURL + 'create', educacion);
   }
 
   public update(id: number, educacion: Educacion): Observable<any> {
-    return this.httpClient.put<any>(this.eduURL + `update/${id}`, educacion);
+    return this.httpClient.put(this.eduURL + `update/${id}`, educacion);
   }
 
   public delete(id: number): Observable<any> {
-    return this.httpClient.delete<any>(this.eduURL + `delete/${id}`);
+    return this.httpClient.delete(this.eduURL + `delete/${id}`);
   }
 }

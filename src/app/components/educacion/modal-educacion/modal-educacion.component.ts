@@ -21,7 +21,7 @@ export class ModalEducacionComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<ModalEducacionComponent>,
-    private sEducacion: EducacionService,
+    private service: EducacionService,
     private snackbar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
@@ -31,7 +31,7 @@ export class ModalEducacionComponent implements OnInit {
 
   onCreate(): void {
     const educacion = new Educacion(this.nombreEducacion, this.descripcionEducacion, this.establecimiento, this.imgEducacion, this.startEducacion, this.endEducacion);
-    this.sEducacion.save(educacion).subscribe(data => {
+    this.service.save(educacion).subscribe(data => {
       this.dialogRef.close();
       this.snackbar.open('Educacion creada', 'Cerrar', {
         duration: 2000,

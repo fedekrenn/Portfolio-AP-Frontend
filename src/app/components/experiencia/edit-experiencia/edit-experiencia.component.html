@@ -1,24 +1,24 @@
-<form (ngSubmit)="onUpdate(data.id)" novalidate #f="ngForm">
+experiencia<form (ngSubmit)="onUpdate(data.id)" novalidate #f="ngForm">
     <h2 mat-dialog-title>Modificar la experiencia laboral</h2>
     <div class="form-container">
         <label for="nombreExperiencia">Nombre del puesto
-            <input type="text" id="nombreExperiencia" name="nombreExperiencia" placeholder="Ej: Gerente" [(ngModel)]="expLab.nombreExperiencia" required/>
+            <input type="text" id="nombreExperiencia" name="nombreExperiencia" placeholder="Ej: Gerente" [(ngModel)]="experiencia.nombreExperiencia" required/>
         </label>
         <label for="compania">Nombre de la empresa
-            <input type="text" id="compania" name="compania" placeholder="Ej: Google" [(ngModel)]="expLab.compania" required/>
+            <input type="text" id="compania" name="compania" placeholder="Ej: Google" [(ngModel)]="experiencia.compania" required/>
         </label>
         <label for="startExp">Fecha de inicio
-            <input type="number" id="startExp" name="startExp" placeholder="Sólo el año" [(ngModel)]="expLab.startExp" required/>
+            <input type="number" id="startExp" name="startExp" placeholder="Sólo el año" [(ngModel)]="experiencia.startExp" required/>
         </label>
         <label for="endExp">Fecha de fin
-            <input type="text" id="endExp" name="endExp" placeholder="Año o 'Actualidad'" [(ngModel)]="expLab.endExp" required/>
+            <input type="text" id="endExp" name="endExp" placeholder="Año o 'Actualidad'" [(ngModel)]="experiencia.endExp" required/>
         </label>
         <label for="imgExp">Imagen
-            <input type="url" id="imgExp" name="imgExp" placeholder="Carga la URL" [(ngModel)]="expLab.imgExp" required/>
+            <input type="url" id="imgExp" name="imgExp" placeholder="Carga la URL" [(ngModel)]="experiencia.imgExp" required/>
         </label>
         <label for="descripcionExperiencia">Descripción de las tareas
             <textarea id="descripcionExperiencia" name="descripcionExperiencia"
-                placeholder="Ej: Desarrollé una app para Google" maxlength="1000" [(ngModel)]="expLab.descripcionExperiencia" required></textarea>
+                placeholder="Ej: Desarrollé una app para Google" maxlength="1000" [(ngModel)]="experiencia.descripcionExperiencia" required></textarea>
         </label>
     </div>
     <div mat-dialog-actions class="form-container__btn">

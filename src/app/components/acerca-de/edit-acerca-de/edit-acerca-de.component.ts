@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { persona } from 'src/app/model/persona.model';
+import { Persona } from 'src/app/model/persona.model';
 import { PersonaService } from 'src/app/service/persona.service';
 
 @Component({
@@ -12,17 +12,17 @@ import { PersonaService } from 'src/app/service/persona.service';
 
 export class EditAcercaDeComponent implements OnInit {
 
-  persona!: persona;
+  persona: Persona = new Persona("", "", "", "", "", 0, "", "", "");
 
   constructor(
-    private sPersona: PersonaService,
+    private service: PersonaService,
     public dialogRef: MatDialogRef<EditAcercaDeComponent>,
     private snackbar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
   ngOnInit(): void {
-    this.sPersona.detail(this.data.id).subscribe(data => {
+    this.service.detail(this.data.id).subscribe(data => {
       this.persona = data;
     }, error => {
       this.snackbar.open(`Error al cargar los datos de la persona: ${error.error.mensaje}`, 'Cerrar', {
@@ -33,7 +33,7 @@ export class EditAcercaDeComponent implements OnInit {
   }
 
   onUpdate(id: any): void {
-    this.sPersona.update(id, this.persona).subscribe(data => {
+    this.service.update(id, this.persona).subscribe(data => {
       this.dialogRef.close();
       this.snackbar.open('"Acerca de" actualizada', 'Cerrar', {
         duration: 2000,

@@ -3,17 +3,17 @@
         <h2>Educación</h2>
         <i class="fa-solid fa-plus" mat-button (click)="openDialog()" *ngIf="isLogged"></i>
     </div>
-    <div class="contenedor__child" *ngFor="let oneEdu of educacion">
-        <img [src]="oneEdu.imgEducacion" [alt]="oneEdu.nombreEducacion">
+    <div class="contenedor__child" *ngFor="let educacion of educaciones">
+        <img [src]="educacion.imgEducacion" [alt]="educacion.nombreEducacion">
         <div class="descripcion-puesto">
-            <h3>{{oneEdu.nombreEducacion}}</h3>
-            <h4 class="descripcion-puesto__info">{{oneEdu.establecimiento}}</h4>
-            <h5 class="descripcion-puesto__info">{{oneEdu.startEducacion}} - {{oneEdu.endEducacion}}</h5>
-            <p>{{oneEdu.descripcionEducacion}}</p>
+            <h3>{{educacion.nombreEducacion}}</h3>
+            <h4 class="descripcion-puesto__info">{{educacion.establecimiento}}</h4>
+            <h5 class="descripcion-puesto__info">{{educacion.startEducacion}} - {{educacion.endEducacion}}</h5>
+            <p>{{educacion.descripcionEducacion}}</p>
         </div>
         <div class="iconos-edicion">
-            <i class="fa-solid fa-pen" *ngIf="isLogged" (click)="openDialog2(oneEdu.id)"></i>
-            <i class="fa-solid fa-trash" *ngIf="isLogged" (click)="delete(oneEdu.id)"></i>
+            <i class="fa-solid fa-pen" *ngIf="isLogged" (click)="openDialog2(educacion.id)"></i>
+            <i class="fa-solid fa-trash" *ngIf="isLogged" (click)="delete(educacion.id)"></i>
         </div>
     </div>
 

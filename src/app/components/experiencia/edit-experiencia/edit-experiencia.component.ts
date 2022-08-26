@@ -11,18 +11,18 @@ import { ExperienciaService } from 'src/app/service/experiencia.service';
 })
 export class EditExperienciaComponent implements OnInit {
 
-  expLab!: Experiencia;
+  experiencia: Experiencia = new Experiencia("", "", "", "", 0, "");
 
   constructor(
-    private sExperiencia: ExperienciaService,
+    private service: ExperienciaService,
     public dialogRef: MatDialogRef<EditExperienciaComponent>,
     private snackbar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
   ngOnInit(): void {
-    this.sExperiencia.detail(this.data.id).subscribe(data => {
-      this.expLab = data;
+    this.service.detail(this.data.id).subscribe(data => {
+      this.experiencia = data;
     }, error => {
       this.snackbar.open(`Error al cargar experiencia: ${error.error.mensaje}`, 'Cerrar', {
         duration: 2000,
@@ -32,7 +32,7 @@ export class EditExperienciaComponent implements OnInit {
   }
 
   onUpdate(id: any): void {
-    this.sExperiencia.update(id, this.expLab).subscribe(data => {
+    this.service.update(id, this.experiencia).subscribe(data => {
       this.dialogRef.close();
       this.snackbar.open('Experiencia actualizada', 'Cerrar', {
         duration: 2000,
