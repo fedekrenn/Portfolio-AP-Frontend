@@ -1,1 +1,12 @@
-@import '../../educacion/modal-educacion/modal-educacion.component.css'
+@import '../../educacion/modal-educacion/modal-educacion.component.css';
+
+.color-skills{
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#colorSkill{
+    display: block;
+    margin: 20px auto;
+}
