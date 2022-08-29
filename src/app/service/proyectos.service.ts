@@ -8,8 +8,7 @@ import { Proyecto } from '../model/proyectos';
 })
 export class ProyectosService {
 
-  // proyUrl = 'https://backkrenn.herokuapp.com/proyectos/';
-  ENDPOINT = 'http://localhost:8080/proyectos/';
+  ENDPOINT = 'https://backkrenn.herokuapp.com/proyectos/';
 
   constructor(private httpClient: HttpClient) { }
 
