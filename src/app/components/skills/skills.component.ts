@@ -55,7 +55,7 @@ export class SkillsComponent implements OnInit {
     }
   }
 
-  openDialog(): void {
+  openDialogNew(): void {
     const dialogRef = this.dialog.open(ModalSkillsComponent, {
       width: '500px',
       data: 'rigth click'
@@ -66,7 +66,7 @@ export class SkillsComponent implements OnInit {
     });
   }
 
-  openDialog2(id: any): void {
+  openDialogEdit(id: any): void {
     const dialogRef = this.dialog.open(EditSkillsComponent, {
       width: '500px',
       data: { id: id }

@@ -1,7 +1,7 @@
 <section class="contenedor">
     <div class="contenedor__barra-titulo">
         <h2>Experiencia</h2>
-        <i class="fa-solid fa-plus" mat-button (click)="openDialog()" *ngIf="isLogged"></i>
+        <i class="fa-solid fa-plus" mat-button (click)="openDialogNew()" *ngIf="isLogged"></i>
     </div>
     <div class="contenedor__child" *ngFor="let experiencia of experiencias">
         <img [src]="experiencia.imgExp" [alt]="experiencia.nombreExperiencia">
@@ -12,7 +12,7 @@
             <p>{{experiencia.descripcionExperiencia}}</p>
         </div>
         <div class="iconos-edicion">
-            <i class="fa-solid fa-pen" *ngIf="isLogged" (click)="openDialog2(experiencia.id)"></i>
+            <i class="fa-solid fa-pen" *ngIf="isLogged" (click)="openDialogEdit(experiencia.id)"></i>
             <i class="fa-solid fa-trash" *ngIf="isLogged" (click)="delete(experiencia.id)"></i>
         </div>
     </div>

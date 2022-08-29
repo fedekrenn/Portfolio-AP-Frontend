@@ -56,7 +56,7 @@ export class ExperienciaComponent implements OnInit {
     }
   }
 
-  openDialog(): void {
+  openDialogNew(): void {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '500px',
       data: 'rigth click'
@@ -67,7 +67,7 @@ export class ExperienciaComponent implements OnInit {
     });
   }
 
-  openDialog2(id: any): void {
+  openDialogEdit(id: any): void {
     const dialogRef = this.dialog.open(EditExperienciaComponent, {
       width: '500px',
       data: { id: id }

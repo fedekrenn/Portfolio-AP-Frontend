@@ -1,7 +1,7 @@
 <section class="contenedor">
     <div class="contenedor__barra-titulo">
         <h2>Educación</h2>
-        <i class="fa-solid fa-plus" mat-button (click)="openDialog()" *ngIf="isLogged"></i>
+        <i class="fa-solid fa-plus" mat-button (click)="openDialogNew()" *ngIf="isLogged"></i>
     </div>
     <div class="contenedor__child" *ngFor="let educacion of educaciones">
         <img [src]="educacion.imgEducacion" [alt]="educacion.nombreEducacion">
@@ -12,7 +12,7 @@
             <p>{{educacion.descripcionEducacion}}</p>
         </div>
         <div class="iconos-edicion">
-            <i class="fa-solid fa-pen" *ngIf="isLogged" (click)="openDialog2(educacion.id)"></i>
+            <i class="fa-solid fa-pen" *ngIf="isLogged" (click)="openDialogEdit(educacion.id)"></i>
             <i class="fa-solid fa-trash" *ngIf="isLogged" (click)="delete(educacion.id)"></i>
         </div>
     </div>
