@@ -8,8 +8,8 @@ import { Persona } from '../model/persona.model';
   providedIn: 'root'
 })
 export class PersonaService {
-  
-  ENDPOINT = 'https://backkrenn.herokuapp.com/persona/';
+  // URL = 'https://backkrenn.herokuapp.com/persona/';
+  ENDPOINT = 'http://localhost:8080/persona/';
 
   constructor(private http: HttpClient) { }
 

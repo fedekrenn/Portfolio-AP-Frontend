@@ -9,8 +9,8 @@ import { Educacion } from '../model/educacion';
 })
 export class EducacionService {
 
-  ENDPOINT = 'https://backkrenn.herokuapp.com/educacion/'
-  
+  // eduURL = 'https://backkrenn.herokuapp.com/educacion/';
+  ENDPOINT = 'http://localhost:8080/educacion/'
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Educacion[]> {

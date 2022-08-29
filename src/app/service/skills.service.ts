@@ -9,7 +9,8 @@ import { Skill } from '../model/skills';
 })
 export class SkillsService {
 
-  ENDPOINT = 'https://backkrenn.herokuapp.com/skills/';
+  // skillsUrl = 'https://backkrenn.herokuapp.com/skills/';
+  ENDPOINT = 'http://localhost:8080/skills/';
 
   constructor(private httpClient: HttpClient) { }
 

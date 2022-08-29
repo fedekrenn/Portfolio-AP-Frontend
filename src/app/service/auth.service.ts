@@ -10,7 +10,8 @@ import { NuevoUsuario } from '../model/nuevo-usuario';
 })
 export class AuthService {
 
-  ENDPOINT = 'https://backkrenn.herokuapp.com/auth/';
+  // authURL = 'https://backkrenn.herokuapp.com/auth/';
+  ENDPOINT = 'http://localhost:8080/auth/';
 
   constructor(private httpClient: HttpClient) { }
 
