@@ -1,27 +1,36 @@
-# PortfolioArgentinaPrograma
+# 🖥Portfolio web | Argentina Programa
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+Bienvenidos al repositorio de la parte Frontend de mi trabajo final para #YoProgramo, si querés ver el backend podés entrar a [Repo backend](https://github.com/fedekrenn/Portfolio-AP-Backend)
 
-## Development server
+## 📝 Detalle
+- **Single Page Application** realizada utilizando Html, Css, Material UI y Circle Progress.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## ✅ Acceso al porfolio
 
-## Code scaffolding
+Puedes navegar por el contenido sin tener que loguearte, en este caso podrás observar los datos de contacto, información sobre mí, experiencia, educación, skills y proyectos en los que he trabajado. **ATENCIÓN:** Al estar deployado en Heroku en un plan free, la primera carga de la información tarda mucho por los dyna, luego de eso podés usar sin problemas el portfolio 
+<br>
+<br>
+Para poder editar el contenido debés acceder **CONSTRUCCION**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## ⌨🖱 Instalación
+- Para correr la webapp de manera local tendrás que: 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clonar el repositorio
 
-## Running unit tests
+    `git clone https://github.com/fedekrenn/Portfolio-AP-Frontend.git`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Instalar las dependencias
 
-## Running end-to-end tests
+    `npm install`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Compilar y montar el proyecto utilizando el comando `ng serve`
 
-## Further help
+5. Tener corriendo un servidor con el backend para que los datos viajen correctamente entre la base de datos
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<h2> 🙋‍♂️ Hola, Soy Federico Krenn</h2>
+:nerd_face: Me encuentro cursando la carrera de fullstrack developer en Coderhouse 
+<br>
+🌱 Actualmente estoy cursando Backend
+<br></br>
+📫 Conectemos en Linkedin: https://www.linkedin.com/in/fkrenn/
