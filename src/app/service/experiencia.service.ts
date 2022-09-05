@@ -8,7 +8,7 @@ import { Experiencia } from '../model/experiencia';
 })
 export class ExperienciaService {
 
-  ENDPOINT = 'https://backkrenn.herokuapp.com/experiencia-laboral/';
+  ENDPOINT = 'http://localhost:8080/experiencia-laboral/';
   
   constructor(private httpClient: HttpClient) { }
 

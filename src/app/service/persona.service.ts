@@ -9,7 +9,7 @@ import { Persona } from '../model/persona.model';
 })
 export class PersonaService {
   
-  ENDPOINT = 'https://backkrenn.herokuapp.com/persona/';
+  ENDPOINT = 'http://localhost:8080/persona/';
 
   constructor(private http: HttpClient) { }
 
