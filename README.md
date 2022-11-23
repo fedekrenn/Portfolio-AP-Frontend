@@ -44,7 +44,7 @@ Para poder editar el contenido debés acceder desde el ícono de logueao con el 
 4. Tener corriendo un servidor con el backend para que los datos viajen correctamente entre la base de datos
 
 <h2> 🙋‍♂️ Hola, Soy Federico Krenn</h2>
-:nerd_face: Me encuentro cursando la carrera de fullstrack developer en Coderhouse 
+:nerd_face: Me encuentro cursando la carrera de fullstack developer en Coderhouse 
 <br>
 🌱 Actualmente estoy cursando Backend
 <br></br>
